@@ -29,7 +29,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="Choose Team"/>
                                 <connections>
-                                    <segue destination="vLl-ZR-2Pm" kind="show" id="cME-Av-GFI"/>
+                                    <segue destination="hBt-Az-AvX" kind="show" id="Lzy-eu-Hrs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-TF-gml" userLabel="btnStartGame">
@@ -57,55 +57,10 @@
         <!--Choose View Controller-->
         <scene sceneID="cdY-rw-mrJ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hBt-Az-AvX" customClass="ChooseViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="max" id="hBt-Az-AvX" customClass="ChooseViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnU-1f-0e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850" y="393"/>
-        </scene>
-        <!--Default View Controller-->
-        <scene sceneID="lgx-Ub-KfM">
-            <objects>
-                <viewController id="vLl-ZR-2Pm" customClass="DefaultViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Am-h4-xTe"/>
-                        <viewControllerLayoutGuide type="bottom" id="uGl-tL-od7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y3y-oT-FYs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whU-MQ-iYg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.48166738457263081" green="1" blue="0.24822906345260454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="hBt-Az-AvX" kind="embed" id="c2t-Xj-0VN"/>
-                                </connections>
-                            </containerView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Su-Fa-V3W">
-                                <rect key="frame" x="168" y="600" width="39" height="37"/>
-                                <connections>
-                                    <action selector="pageControl:" destination="vLl-ZR-2Pm" eventType="valueChanged" id="L6B-qV-OkX"/>
-                                </connections>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="whU-MQ-iYg" secondAttribute="bottom" id="23e-J7-MEf"/>
-                            <constraint firstItem="whU-MQ-iYg" firstAttribute="top" secondItem="Y3y-oT-FYs" secondAttribute="top" id="G7C-k3-iAV"/>
-                            <constraint firstItem="9Su-Fa-V3W" firstAttribute="centerX" secondItem="Y3y-oT-FYs" secondAttribute="centerX" id="O8N-od-2OT"/>
-                            <constraint firstAttribute="bottom" secondItem="9Su-Fa-V3W" secondAttribute="bottom" constant="30" id="dyg-cw-dgJ"/>
-                            <constraint firstAttribute="trailing" secondItem="whU-MQ-iYg" secondAttribute="trailing" id="ifx-gY-nde"/>
-                            <constraint firstItem="whU-MQ-iYg" firstAttribute="leading" secondItem="Y3y-oT-FYs" secondAttribute="leading" id="p8P-jY-r5r"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="containerView" destination="whU-MQ-iYg" id="NzX-YA-v1R"/>
-                        <outlet property="pageControl" destination="9Su-Fa-V3W" id="3jV-Zn-ebL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jhf-OZ-r64" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1592" y="393"/>
         </scene>
         <!--View Controller Mystic-->
         <scene sceneID="sdc-Ch-xMT">
@@ -220,24 +175,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZ7-kU-ef9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="849" y="1095"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="BDp-pc-NTJ">
-            <objects>
-                <viewController id="E8g-WP-nfm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N4N-Ti-MSU"/>
-                        <viewControllerLayoutGuide type="bottom" id="qvx-im-skq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HrF-L1-m8k">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s1Z-Ib-ruZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1591" y="-263"/>
         </scene>
     </scenes>
 </document>
