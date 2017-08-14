@@ -83,6 +83,9 @@
                             </containerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Su-Fa-V3W">
                                 <rect key="frame" x="168" y="600" width="39" height="37"/>
+                                <connections>
+                                    <action selector="pageControl:" destination="vLl-ZR-2Pm" eventType="valueChanged" id="L6B-qV-OkX"/>
+                                </connections>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,7 +100,7 @@
                     </view>
                     <connections>
                         <outlet property="containerView" destination="whU-MQ-iYg" id="NzX-YA-v1R"/>
-                        <outlet property="pageContoll" destination="9Su-Fa-V3W" id="X7e-w4-Qm9"/>
+                        <outlet property="pageControl" destination="9Su-Fa-V3W" id="3jV-Zn-ebL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhf-OZ-r64" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,6 +225,10 @@
         <scene sceneID="BDp-pc-NTJ">
             <objects>
                 <viewController id="E8g-WP-nfm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N4N-Ti-MSU"/>
+                        <viewControllerLayoutGuide type="bottom" id="qvx-im-skq"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HrF-L1-m8k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

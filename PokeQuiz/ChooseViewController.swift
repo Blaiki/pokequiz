@@ -10,31 +10,66 @@ import UIKit
 
 class ChooseViewController: UIPageViewController {
 
-    weak var defaultDelegate: DefaultPageViewControllerDelegate?
+    weak var defaultDelegate: ChooseViewControllerDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dataSource = self
+        self.dataSource = self
         
-        delegate = self as! UIPageViewControllerDelegate
+        self.delegate = self
 
         
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
+        if let initialViewController = orderedViewControllers.first {
+            scrollToViewController(viewController: initialViewController)
         }
         
-        defaultDelegate?.defaultPageViewController(defaultPageViewController: self, didUpdatePageCount: orderedViewControllers.count)
+        //defaultDelegate?.defaultPageViewController(chooseViewController: self, didUpdatePageCount: orderedViewControllers.count)
+        defaultDelegate?.chooseViewController(chooseViewController: self, didUpdatePageCount: orderedViewControllers.count)
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scrollToViewController(index newIndex: Int) {
+        if let firstViewController = viewControllers?.first,
+            let currentIndex = orderedViewControllers.index(of: firstViewController) {
+            let direction: UIPageViewControllerNavigationDirection = newIndex >= currentIndex ? .forward : .reverse
+            let nextViewController = orderedViewControllers[newIndex]
+            scrollToViewController(viewController: nextViewController, direction: direction)
+        }
+    }
+    
+    /**
+     Scrolls to the given 'viewController' page.
+     
+     - parameter viewController: the view controller to show.
+     */
+    private func scrollToViewController(viewController: UIViewController,
+                                        direction: UIPageViewControllerNavigationDirection = .forward) {
+        setViewControllers([viewController],
+                           direction: direction,
+                           animated: true,
+                           completion: { (finished) -> Void in
+                            // Setting the view controller programmatically does not fire
+                            // any delegate methods, so we have to manually notify the
+                            // 'tutorialDelegate' of the new index.
+                            self.notifyDefaultDelegateOfNewIndex()
+        })
+    }
+    
+    /**
+     Notifies '_tutorialDelegate' that the current page index was updated.
+     */
+    func notifyDefaultDelegateOfNewIndex() {
+        if let firstViewController = viewControllers?.first,
+            let index = orderedViewControllers.index(of: firstViewController) {
+            defaultDelegate?.chooseViewController(chooseViewController: self,didUpdatePageIndex: index)
+        }
     }
     
 
@@ -47,10 +82,6 @@ class ChooseViewController: UIPageViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-    
-    
-    
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.teamViewController(team: "Mystic"),
@@ -67,24 +98,21 @@ class ChooseViewController: UIPageViewController {
 
 extension ChooseViewController: UIPageViewControllerDelegate {
     
-    func pageViewController(pageViewController: UIPageViewController,
+    func pageViewController(_ pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,
                             previousViewControllers: [UIViewController],
                             transitionCompleted completed: Bool) {
-        if let firstViewController = viewControllers?.first,
-            let index = orderedViewControllers.index(of: firstViewController) {
-            defaultDelegate?.defaultPageViewController(defaultPageViewController: self, didUpdatePageIndex: index)
-        }
+        notifyDefaultDelegateOfNewIndex()
     }
     
 }
 
-protocol DefaultPageViewControllerDelegate: class {
+protocol ChooseViewControllerDelegate: class {
     
-    func defaultPageViewController(defaultPageViewController: ChooseViewController,
+    func chooseViewController(chooseViewController: ChooseViewController,
                                     didUpdatePageCount count: Int)
     
-    func defaultPageViewController(defaultPageViewController: ChooseViewController,
+    func chooseViewController(chooseViewController: ChooseViewController,
                                     didUpdatePageIndex index: Int)
     
 }

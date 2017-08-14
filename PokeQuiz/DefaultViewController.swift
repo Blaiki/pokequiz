@@ -9,8 +9,15 @@
 import UIKit
 
 class DefaultViewController: UIViewController {
-    @IBOutlet weak var pageContoll: UIPageControl!
+    //@IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var containerView: UIView!
+    
+    var chooseViewController: ChooseViewController? {
+        didSet {
+            chooseViewController?.defaultDelegate = self
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,19 +40,23 @@ class DefaultViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func pageControl(_ sender: Any) {
+        chooseViewController?.scrollToViewController(index: pageControl.currentPage)
+    }
 
 }
 
-extension DefaultViewController: DefaultPageViewControllerDelegate {
+extension DefaultViewController: ChooseViewControllerDelegate {
     
-    func defaultPageViewController(defaultPageViewController: ChooseViewController,
+    func chooseViewController(chooseViewController: ChooseViewController,
                                     didUpdatePageCount count: Int) {
-        pageContoll.numberOfPages = count
+        self.chooseViewController = chooseViewController
+        pageControl.numberOfPages = count
     }
     
-    func defaultPageViewController(defaultPageViewController: ChooseViewController,
+    func chooseViewController(chooseViewController: ChooseViewController,
                                     didUpdatePageIndex index: Int) {
-        pageContoll.currentPage = index
+        pageControl.currentPage = index
     }
     
 }
