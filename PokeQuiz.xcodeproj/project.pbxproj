@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					8AD7641E1F41D2DF00770B29 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N9SJXMUKHC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -262,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N9SJXMUKHC;
 				INFOPLIST_FILE = PokeQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dream.PokeQuiz;
@@ -274,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N9SJXMUKHC;
 				INFOPLIST_FILE = PokeQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Dream.PokeQuiz;
