@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hBt-Az-AvX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,16 +24,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-hC-SSJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tD9-HD-9cH" userLabel="btnChoose">
-                                <rect key="frame" x="122" y="541" width="130" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose Team">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hBt-Az-AvX" kind="show" id="Lzy-eu-Hrs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-TF-gml" userLabel="btnStartGame">
                                 <rect key="frame" x="132.5" y="591" width="109" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -51,8 +41,6 @@
                             <constraint firstAttribute="trailing" secondItem="SP3-hC-SSJ" secondAttribute="trailing" id="P76-sN-A70"/>
                             <constraint firstItem="SP3-hC-SSJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qrr-DY-1Uq"/>
                             <constraint firstAttribute="bottom" secondItem="dXl-TF-gml" secondAttribute="bottom" constant="40" id="T9J-Ic-pMH"/>
-                            <constraint firstAttribute="bottom" secondItem="tD9-HD-9cH" secondAttribute="bottom" constant="90" id="gLb-XM-SE1"/>
-                            <constraint firstItem="tD9-HD-9cH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gkG-Qq-nys"/>
                             <constraint firstItem="dXl-TF-gml" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rST-WB-W6o"/>
                             <constraint firstAttribute="bottom" secondItem="SP3-hC-SSJ" secondAttribute="bottom" id="zpW-9k-WMM"/>
                         </constraints>
@@ -230,42 +218,41 @@
                                 <color key="backgroundColor" red="0.41241544519829054" green="0.35116202172887812" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk2-Il-Vxs" userLabel="btnChooseM">
-                                <rect key="frame" x="87.5" y="541" width="199" height="36"/>
+                                <rect key="frame" x="150" y="541" width="74" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose Team Mystic">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMg-Je-o27" userLabel="btnBackM">
-                                <rect key="frame" x="15" y="15" width="37" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Choose">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="QL4-rg-ctr"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="XYs-6F-uqA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v80-aX-zae" userLabel="btnAboutTeamM">
-                                <rect key="frame" x="274" y="15" width="86" height="30"/>
+                                <rect key="frame" x="223" y="15" width="137" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="About Team">
+                                <state key="normal" title="About Team Mystic">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ns-TV-d4v">
+                                <rect key="frame" x="76.5" y="150" width="222.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="gk2-Il-Vxs" secondAttribute="bottom" constant="90" id="5zE-xH-aDb"/>
-                            <constraint firstItem="rMg-Je-o27" firstAttribute="top" secondItem="zGF-nq-cvj" secondAttribute="top" constant="15" id="Af1-lx-zRi"/>
                             <constraint firstAttribute="bottom" secondItem="96Z-NO-hEy" secondAttribute="bottom" id="EsA-1Y-LdO"/>
+                            <constraint firstItem="5ns-TV-d4v" firstAttribute="top" secondItem="zGF-nq-cvj" secondAttribute="top" constant="150" id="HHG-Y4-YNv"/>
                             <constraint firstItem="96Z-NO-hEy" firstAttribute="top" secondItem="zGF-nq-cvj" secondAttribute="top" id="LKU-g6-xWQ"/>
                             <constraint firstAttribute="trailing" secondItem="v80-aX-zae" secondAttribute="trailing" constant="15" id="OaD-LM-Abh"/>
                             <constraint firstAttribute="trailing" secondItem="96Z-NO-hEy" secondAttribute="trailing" id="Vzy-e2-xo3"/>
                             <constraint firstItem="v80-aX-zae" firstAttribute="top" secondItem="zGF-nq-cvj" secondAttribute="top" constant="15" id="Yg8-Gt-Taq"/>
+                            <constraint firstItem="5ns-TV-d4v" firstAttribute="centerX" secondItem="zGF-nq-cvj" secondAttribute="centerX" id="bPO-0L-94k"/>
                             <constraint firstItem="96Z-NO-hEy" firstAttribute="leading" secondItem="zGF-nq-cvj" secondAttribute="leading" id="irf-na-F2z"/>
                             <constraint firstItem="gk2-Il-Vxs" firstAttribute="centerX" secondItem="zGF-nq-cvj" secondAttribute="centerX" id="nb6-oI-gEr"/>
-                            <constraint firstItem="rMg-Je-o27" firstAttribute="leading" secondItem="zGF-nq-cvj" secondAttribute="leading" constant="15" id="tQn-7t-t5P"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -290,40 +277,39 @@
                                 <color key="backgroundColor" red="1" green="0.30293555475980194" blue="0.28432113960275185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPG-2K-3oL" userLabel="btnChooseV">
-                                <rect key="frame" x="95" y="541" width="184" height="36"/>
+                                <rect key="frame" x="150" y="541" width="74" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose Team Valor">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEh-QZ-7KP" userLabel="btnBackV">
-                                <rect key="frame" x="15" y="15" width="37" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Choose">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="mHf-X1-asb"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="w4h-FS-a08"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cfl-UO-MZL" userLabel="btnAboutTeamV">
-                                <rect key="frame" x="274" y="15" width="86" height="30"/>
+                                <rect key="frame" x="234" y="15" width="126" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="About Team">
+                                <state key="normal" title="About Team Valor">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJd-ZL-EdJ">
+                                <rect key="frame" x="76" y="150" width="222.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="KPG-2K-3oL" secondAttribute="bottom" constant="90" id="E4D-OD-J0s"/>
                             <constraint firstAttribute="bottom" secondItem="XSy-aM-Pys" secondAttribute="bottom" id="Gmb-fC-MKL"/>
                             <constraint firstItem="KPG-2K-3oL" firstAttribute="centerX" secondItem="nsa-GN-qtK" secondAttribute="centerX" id="IAb-ot-pEp"/>
-                            <constraint firstItem="MEh-QZ-7KP" firstAttribute="leading" secondItem="nsa-GN-qtK" secondAttribute="leading" constant="15" id="aNE-sB-2gl"/>
+                            <constraint firstItem="PJd-ZL-EdJ" firstAttribute="top" secondItem="nsa-GN-qtK" secondAttribute="top" constant="150" id="K3l-BH-Tnm"/>
                             <constraint firstItem="XSy-aM-Pys" firstAttribute="top" secondItem="nsa-GN-qtK" secondAttribute="top" id="eLa-Zh-U3O"/>
                             <constraint firstItem="XSy-aM-Pys" firstAttribute="leading" secondItem="nsa-GN-qtK" secondAttribute="leading" id="edE-p0-1lE"/>
-                            <constraint firstItem="MEh-QZ-7KP" firstAttribute="top" secondItem="nsa-GN-qtK" secondAttribute="top" constant="15" id="h4v-Gi-Blo"/>
                             <constraint firstAttribute="trailing" secondItem="XSy-aM-Pys" secondAttribute="trailing" id="mGu-s1-aiN"/>
+                            <constraint firstItem="PJd-ZL-EdJ" firstAttribute="centerX" secondItem="nsa-GN-qtK" secondAttribute="centerX" id="oyV-RV-vQv"/>
                             <constraint firstAttribute="trailing" secondItem="Cfl-UO-MZL" secondAttribute="trailing" constant="15" id="tWP-TW-Lgp"/>
                             <constraint firstItem="Cfl-UO-MZL" firstAttribute="top" secondItem="nsa-GN-qtK" secondAttribute="top" constant="15" id="toq-Ud-qGu"/>
                         </constraints>
@@ -350,42 +336,41 @@
                                 <color key="backgroundColor" red="0.98998528910415828" green="1" blue="0.097822955192515826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylQ-dG-x8E" userLabel="btnChooseI">
-                                <rect key="frame" x="83.5" y="541" width="207" height="36"/>
+                                <rect key="frame" x="150" y="541" width="74" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose Team Instinct">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1n-v2-M9M" userLabel="btnBackI">
-                                <rect key="frame" x="15" y="15" width="37" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Choose">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="kZM-s0-Mxf"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="qkH-35-9SG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-lN-b7d" userLabel="btnAboutTeamI">
-                                <rect key="frame" x="274" y="15" width="86" height="30"/>
+                                <rect key="frame" x="217" y="15" width="143" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="About Team">
+                                <state key="normal" title="About Team Instinct">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uw-sF-kdu">
+                                <rect key="frame" x="76" y="150" width="222.5" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TcS-Ui-QwD" firstAttribute="top" secondItem="SrP-dc-h4V" secondAttribute="top" id="6Vf-KW-fAG"/>
                             <constraint firstItem="WUb-lN-b7d" firstAttribute="top" secondItem="SrP-dc-h4V" secondAttribute="top" constant="15" id="Czm-jk-Abf"/>
-                            <constraint firstItem="v1n-v2-M9M" firstAttribute="top" secondItem="SrP-dc-h4V" secondAttribute="top" constant="15" id="J4W-bb-i6a"/>
                             <constraint firstAttribute="bottom" secondItem="TcS-Ui-QwD" secondAttribute="bottom" id="QfT-mS-190"/>
                             <constraint firstItem="ylQ-dG-x8E" firstAttribute="centerX" secondItem="SrP-dc-h4V" secondAttribute="centerX" id="X6G-7b-qj5"/>
                             <constraint firstAttribute="bottom" secondItem="ylQ-dG-x8E" secondAttribute="bottom" constant="90" id="bqU-06-xr3"/>
                             <constraint firstAttribute="trailing" secondItem="WUb-lN-b7d" secondAttribute="trailing" constant="15" id="e1v-aa-xUy"/>
                             <constraint firstItem="TcS-Ui-QwD" firstAttribute="leading" secondItem="SrP-dc-h4V" secondAttribute="leading" id="hxf-HZ-IXV"/>
-                            <constraint firstItem="v1n-v2-M9M" firstAttribute="leading" secondItem="SrP-dc-h4V" secondAttribute="leading" constant="15" id="n55-2n-iG8"/>
                             <constraint firstAttribute="trailing" secondItem="TcS-Ui-QwD" secondAttribute="trailing" id="njs-Ld-BNK"/>
+                            <constraint firstItem="1uw-sF-kdu" firstAttribute="top" secondItem="SrP-dc-h4V" secondAttribute="top" constant="150" id="s3x-GB-iNn"/>
+                            <constraint firstItem="1uw-sF-kdu" firstAttribute="centerX" secondItem="SrP-dc-h4V" secondAttribute="centerX" id="uTa-nq-OmY"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -404,7 +389,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="vdp-Ol-rYZ"/>
-        <segue reference="Lt1-ax-5Wv"/>
-        <segue reference="iCD-Lu-tHu"/>
+        <segue reference="XEJ-72-oZV"/>
+        <segue reference="qkH-35-9SG"/>
     </inferredMetricsTieBreakers>
 </document>
