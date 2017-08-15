@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3DA324D91F42E63C00BF084C /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA324D81F42E63C00BF084C /* Quiz.swift */; };
+		3DA324DB1F42F67200BF084C /* AppValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA324DA1F42F67200BF084C /* AppValues.swift */; };
+		3DA324DD1F42F83000BF084C /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA324DC1F42F83000BF084C /* TeamViewController.swift */; };
 		8A0D50151F422EAB0023E548 /* ChooseGenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D50141F422EAB0023E548 /* ChooseGenViewController.swift */; };
 		8A0D50171F422EF00023E548 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D50161F422EF00023E548 /* GameViewController.swift */; };
 		8AD764231F41D2DF00770B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD764221F41D2DF00770B29 /* AppDelegate.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		3DA324D81F42E63C00BF084C /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		3DA324DA1F42F67200BF084C /* AppValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppValues.swift; sourceTree = "<group>"; };
+		3DA324DC1F42F83000BF084C /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		8A0D50141F422EAB0023E548 /* ChooseGenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseGenViewController.swift; sourceTree = "<group>"; };
 		8A0D50161F422EF00023E548 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8AD7641F1F41D2DF00770B29 /* PokeQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,8 @@
 				8AD7642B1F41D2DF00770B29 /* LaunchScreen.storyboard */,
 				8AD7642E1F41D2DF00770B29 /* Info.plist */,
 				3DA324D81F42E63C00BF084C /* Quiz.swift */,
+				3DA324DA1F42F67200BF084C /* AppValues.swift */,
+				3DA324DC1F42F83000BF084C /* TeamViewController.swift */,
 			);
 			path = PokeQuiz;
 			sourceTree = "<group>";
@@ -150,9 +156,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A0D50171F422EF00023E548 /* GameViewController.swift in Sources */,
+				3DA324DD1F42F83000BF084C /* TeamViewController.swift in Sources */,
 				8AD764251F41D2DF00770B29 /* ViewController.swift in Sources */,
 				3DA324D91F42E63C00BF084C /* Quiz.swift in Sources */,
 				8AD764231F41D2DF00770B29 /* AppDelegate.swift in Sources */,
+				3DA324DB1F42F67200BF084C /* AppValues.swift in Sources */,
 				8A0D50151F422EAB0023E548 /* ChooseGenViewController.swift in Sources */,
 				8AD764351F41DD1C00770B29 /* ChooseViewController.swift in Sources */,
 			);

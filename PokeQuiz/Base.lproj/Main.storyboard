@@ -204,7 +204,7 @@
         <!--View Controller Mystic-->
         <scene sceneID="sdc-Ch-xMT">
             <objects>
-                <viewController storyboardIdentifier="ViewControllerMystic" id="1fz-IB-q6d" userLabel="View Controller Mystic" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerMystic" id="1fz-IB-q6d" userLabel="View Controller Mystic" customClass="TeamViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bN6-Nh-33Y"/>
                         <viewControllerLayoutGuide type="bottom" id="l1o-3a-apz"/>
@@ -255,6 +255,9 @@
                             <constraint firstItem="gk2-Il-Vxs" firstAttribute="centerX" secondItem="zGF-nq-cvj" secondAttribute="centerX" id="nb6-oI-gEr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChose" destination="gk2-Il-Vxs" id="lB3-l1-NpD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBN-uJ-x04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -388,7 +391,7 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iCD-Lu-tHu"/>
+        <segue reference="XYs-6F-uqA"/>
         <segue reference="XEJ-72-oZV"/>
         <segue reference="vdp-Ol-rYZ"/>
     </inferredMetricsTieBreakers>

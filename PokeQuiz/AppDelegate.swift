@@ -13,6 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var firstScreen:Bool = true
     
+    private func loadTeam () -> [AppValues]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? [AppValues]
+    }
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -20,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
         let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController
-        if(firstScreen){
+        if(loadTeam()==nil){
             self.window?.rootViewController = firstViewController
         }else{
             self.window?.rootViewController = mainViewController
