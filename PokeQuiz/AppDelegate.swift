@@ -6,6 +6,7 @@
 //  Copyright © 2017 Alexander Ganzer. All rights reserved.
 
 import UIKit
+import os.log
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var firstScreen:Bool = true
     
-    private func loadTeam () -> [AppValues]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? [AppValues]
+    private func loadTeam () -> AppValues? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? AppValues
     }
     
     
@@ -24,7 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
         let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController
-        if(loadTeam()==nil){
+        let team:AppValues = loadTeam()!
+        if(team.team != "name"){
+            firstScreen=false
+        }
+        if(firstScreen){
             self.window?.rootViewController = firstViewController
         }else{
             self.window?.rootViewController = mainViewController

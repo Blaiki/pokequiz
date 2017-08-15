@@ -224,7 +224,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="XYs-6F-uqA"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Pbe-PG-YnW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v80-aX-zae" userLabel="btnAboutTeamM">
@@ -391,7 +391,7 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XYs-6F-uqA"/>
+        <segue reference="Pbe-PG-YnW"/>
         <segue reference="XEJ-72-oZV"/>
         <segue reference="vdp-Ol-rYZ"/>
     </inferredMetricsTieBreakers>

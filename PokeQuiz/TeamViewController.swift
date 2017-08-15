@@ -9,7 +9,7 @@
 import UIKit
 
 class TeamViewController: UIViewController {
-    var appData:AppValues = AppValues(team:"teamPlasma")
+    var appData:AppValues = AppValues(team:"Mystic")
     
     @IBOutlet weak var btnChose: UIButton!
     override func viewDidLoad() {
