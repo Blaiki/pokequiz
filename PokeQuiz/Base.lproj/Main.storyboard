@@ -161,7 +161,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameBack" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-Nx-k5u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-8M-Bzg" userLabel="imgPokemon">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-8M-Bzg" userLabel="imgPokemon">
                                 <rect key="frame" x="30" y="150" width="315" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="VzB-X1-TQx"/>
@@ -395,6 +395,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="001" width="166" height="166"/>
         <image name="gameBack" width="360" height="640"/>
         <image name="instinct" width="360" height="640"/>
         <image name="menu" width="360" height="640"/>
