@@ -134,12 +134,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameBack" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-Nx-k5u">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001" translatesAutoresizingMaskIntoConstraints="NO" id="uPp-8M-Bzg" userLabel="imgPokemon">
-                                <rect key="frame" x="30" y="150" width="315" height="300"/>
+                                <rect key="frame" x="37.5" y="150" width="300" height="300"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="O3X-21-mea"/>
                                     <constraint firstAttribute="height" constant="300" id="VzB-X1-TQx"/>
                                 </constraints>
                             </imageView>
@@ -159,11 +157,13 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="eFB-kc-397"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameBack" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-Nx-k5u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uPp-8M-Bzg" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="150" id="47o-Fg-K87"/>
-                            <constraint firstAttribute="trailing" secondItem="uPp-8M-Bzg" secondAttribute="trailing" constant="30" id="4K4-Ld-HpF"/>
                             <constraint firstItem="56b-5a-jbD" firstAttribute="centerX" secondItem="xxh-AJ-EAa" secondAttribute="centerX" id="EBA-fF-HQE"/>
                             <constraint firstItem="Qmi-Nx-k5u" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" id="N4J-bw-Img"/>
                             <constraint firstItem="Qmi-Nx-k5u" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" id="VCx-VA-GyJ"/>
@@ -172,7 +172,6 @@
                             <constraint firstItem="kqs-7M-4EU" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="15" id="g85-1j-qWz"/>
                             <constraint firstAttribute="trailing" secondItem="Qmi-Nx-k5u" secondAttribute="trailing" id="oZB-TT-rAh"/>
                             <constraint firstItem="kqs-7M-4EU" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" constant="15" id="od9-1g-Ibp"/>
-                            <constraint firstItem="uPp-8M-Bzg" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" constant="30" id="r58-38-rpS"/>
                             <constraint firstAttribute="bottom" secondItem="Qmi-Nx-k5u" secondAttribute="bottom" id="u5h-hc-LeL"/>
                         </constraints>
                     </view>
@@ -386,6 +385,6 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pbe-PG-YnW"/>
+        <segue reference="eFB-kc-397"/>
     </inferredMetricsTieBreakers>
 </document>
