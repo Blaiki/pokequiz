@@ -24,10 +24,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-hC-SSJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-TF-gml" userLabel="btnStartGame">
-                                <rect key="frame" x="132.5" y="591" width="109" height="36"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-TF-gml" userLabel="btnStartGame">
+                                <rect key="frame" x="68" y="581" width="238" height="46"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Start Game">
+                                <state key="normal" title="Start Game" backgroundImage="button3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -171,12 +171,18 @@
                                     <segue destination="hCV-MP-NUs" kind="show" id="Lt1-ax-5Wv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39f-C1-QmR">
+                                <rect key="frame" x="15" y="489" width="31" height="38"/>
+                                <state key="normal" title="A" backgroundImage="button1"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uPp-8M-Bzg" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="150" id="47o-Fg-K87"/>
                             <constraint firstAttribute="trailing" secondItem="uPp-8M-Bzg" secondAttribute="trailing" constant="30" id="4K4-Ld-HpF"/>
+                            <constraint firstItem="39f-C1-QmR" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" constant="15" id="DSZ-uo-jM3"/>
                             <constraint firstItem="56b-5a-jbD" firstAttribute="centerX" secondItem="xxh-AJ-EAa" secondAttribute="centerX" id="EBA-fF-HQE"/>
+                            <constraint firstAttribute="bottom" secondItem="39f-C1-QmR" secondAttribute="bottom" constant="140" id="N1W-y6-q0B"/>
                             <constraint firstItem="Qmi-Nx-k5u" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" id="N4J-bw-Img"/>
                             <constraint firstItem="Qmi-Nx-k5u" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" id="VCx-VA-GyJ"/>
                             <constraint firstItem="56b-5a-jbD" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="75" id="bqj-33-UFu"/>
@@ -218,9 +224,9 @@
                                 <color key="backgroundColor" red="0.41241544519829054" green="0.35116202172887812" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk2-Il-Vxs" userLabel="btnChooseM">
-                                <rect key="frame" x="150" y="541" width="74" height="36"/>
+                                <rect key="frame" x="68" y="531" width="238" height="46"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose">
+                                <state key="normal" title="Choose" backgroundImage="button3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -277,9 +283,9 @@
                                 <color key="backgroundColor" red="1" green="0.30293555475980194" blue="0.28432113960275185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPG-2K-3oL" userLabel="btnChooseV">
-                                <rect key="frame" x="150" y="541" width="74" height="36"/>
+                                <rect key="frame" x="68" y="531" width="238" height="46"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose">
+                                <state key="normal" title="Choose" backgroundImage="button2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -336,9 +342,9 @@
                                 <color key="backgroundColor" red="0.98998528910415828" green="1" blue="0.097822955192515826" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylQ-dG-x8E" userLabel="btnChooseI">
-                                <rect key="frame" x="150" y="541" width="74" height="36"/>
+                                <rect key="frame" x="68" y="531" width="238" height="46"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Choose">
+                                <state key="normal" title="Choose" backgroundImage="button4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -381,6 +387,10 @@
     </scenes>
     <resources>
         <image name="001" width="166" height="166"/>
+        <image name="button1" width="31" height="38"/>
+        <image name="button2" width="238" height="46"/>
+        <image name="button3" width="238" height="46"/>
+        <image name="button4" width="238" height="46"/>
         <image name="gameBack" width="360" height="640"/>
         <image name="instinct" width="360" height="640"/>
         <image name="menu" width="360" height="640"/>
@@ -390,6 +400,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="vdp-Ol-rYZ"/>
         <segue reference="XEJ-72-oZV"/>
-        <segue reference="qkH-35-9SG"/>
+        <segue reference="XYs-6F-uqA"/>
     </inferredMetricsTieBreakers>
 </document>
