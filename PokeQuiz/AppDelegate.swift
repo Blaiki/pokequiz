@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let mainViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
         let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController
+        // here
         if let _:AppValues = loader.loadTeam() {
             firstScreen=false
         }
