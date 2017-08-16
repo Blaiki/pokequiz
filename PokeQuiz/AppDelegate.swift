@@ -24,8 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
         let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController
         // here
-        if let _:AppValues = loader.loadTeam() {
+        if let values:AppValues = loader.loadTeam() {
             firstScreen=false
+            var backImg: UIImage?
+            switch values.team{
+            case "Mystic":
+                backImg = #imageLiteral(resourceName: "mystic")
+            case "Valor":
+                backImg = #imageLiteral(resourceName: "valor")
+            case "Instinct":
+                backImg = #imageLiteral(resourceName: "instinct")
+            default:
+                backImg = #imageLiteral(resourceName: "menu")
+            }
+            let bgView:UIImageView = mainViewController.view.subviews.filter{$0 is UIImageView}.first as! UIImageView
+            bgView.image = backImg
         }
         if(firstScreen){
             self.window?.rootViewController = firstViewController
