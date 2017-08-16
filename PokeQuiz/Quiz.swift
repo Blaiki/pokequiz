@@ -25,7 +25,7 @@ class Quiz: NSObject, NSCoding{
         self.name = name
         super.init()
     }
-    func test(){
+    func test()->String{
         return "JUST A TEST FUNC"
     }
     func encode(with aCoder: NSCoder) {
