@@ -8,18 +8,16 @@
 
 import UIKit
 
-class TeamViewController: UIViewController {
+class TeamYellowViewController: UIViewController {
     var teamSave:AppLoader?
-    @IBOutlet weak var btnChoseBlue: UIButton!
-    @IBOutlet weak var btnChoseRed: UIButton!
     @IBOutlet weak var btnChoseYellow: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        btnChoseBlue.addTarget(self, action: #selector(buttonBlueAction), for: .touchUpInside)
+        btnChoseYellow.addTarget(self, action: #selector(buttonYellowAction), for: .touchUpInside)
     }
-    func buttonBlueAction(sender: UIButton!) {
-        teamSave = AppLoader(team:"Mystic")
+    func buttonYellowAction(sender: UIButton!) {
+        teamSave = AppLoader(team:"Instinct")
         teamSave!.saveTeam()
     }
     override func didReceiveMemoryWarning() {

@@ -252,7 +252,7 @@
         <!--View Controller Valor-->
         <scene sceneID="ti1-Be-COg">
             <objects>
-                <viewController storyboardIdentifier="ViewControllerValor" id="hYA-du-A8J" userLabel="View Controller Valor" customClass="TeamViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerValor" id="hYA-du-A8J" userLabel="View Controller Valor" customClass="TeamRedViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="owm-tY-SSD"/>
                         <viewControllerLayoutGuide type="bottom" id="rRE-lV-bE1"/>
@@ -314,7 +314,7 @@
         <!--View Controller Instinct-->
         <scene sceneID="ATi-Yb-Q4T">
             <objects>
-                <viewController storyboardIdentifier="ViewControllerInstinct" id="adU-gN-gPy" userLabel="View Controller Instinct" customClass="TeamViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerInstinct" id="adU-gN-gPy" userLabel="View Controller Instinct" customClass="TeamYellowViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RFv-6f-M2A"/>
                         <viewControllerLayoutGuide type="bottom" id="5M8-Eo-4Lm"/>
@@ -374,7 +374,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="001" width="166" height="166"/>
+        <image name="001" width="233" height="233"/>
         <image name="button2" width="238" height="46"/>
         <image name="button3" width="238" height="46"/>
         <image name="button4" width="238" height="46"/>
@@ -385,6 +385,6 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eFB-kc-397"/>
+        <segue reference="w4h-FS-a08"/>
     </inferredMetricsTieBreakers>
 </document>
