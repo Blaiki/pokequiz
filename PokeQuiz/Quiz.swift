@@ -12,17 +12,20 @@ import os.log
 struct PropertyKey {
     static let name = "name"
     static let image = "image"
+    static let attempt = "attempt"
 }
 
-class Quiz: NSObject, NSCoding{
+class QuizItem: NSObject, NSCoding{
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("quiz")
     
-    var name:String = "name"
+    var name: String
     var image: UIImage
-    init(name:String,image:UIImage) {
+    var attempt: Int = 0
+    init(name:String,image:UIImage,attempt: Int) {
         self.image = image
         self.name = name
+        self.attempt = attempt
         super.init()
     }
     func test()->String{
@@ -31,13 +34,18 @@ class Quiz: NSObject, NSCoding{
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(image, forKey: PropertyKey.image)
+        aCoder.encode(attempt, forKey: PropertyKey.attempt)
     }
     required convenience init?(coder aDecoder: NSCoder) {
         guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
-            os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
             return nil
         }
-        let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage
-        self.init(name: name, image: image!)
+        guard let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage else {
+            return nil
+        }
+        guard let attempt = aDecoder.decodeObject(forKey: PropertyKey.attempt) as? Int else {
+            return nil
+        }
+        self.init(name: name, image: image,attempt:attempt)
     }
 }
