@@ -15,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var firstScreen:Bool = true
     let loader:AppLoader = AppLoader()
     
-    
-    
+        
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -26,19 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // here
         if let values:AppValues = loader.loadTeam() {
             firstScreen=false
-            var backImg: UIImage?
-            switch values.team{
-            case "Mystic":
-                backImg = #imageLiteral(resourceName: "mystic")
-            case "Valor":
-                backImg = #imageLiteral(resourceName: "valor")
-            case "Instinct":
-                backImg = #imageLiteral(resourceName: "instinct")
-            default:
-                backImg = #imageLiteral(resourceName: "menu")
-            }
-            let bgView:UIImageView = mainViewController.view.subviews.filter{$0 is UIImageView}.first as! UIImageView
-            bgView.image = backImg
+            ViewController.teamName = values.team
         }
         if(firstScreen){
             self.window?.rootViewController = firstViewController
