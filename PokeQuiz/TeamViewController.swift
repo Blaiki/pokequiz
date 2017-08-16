@@ -9,23 +9,33 @@
 import UIKit
 
 class TeamViewController: UIViewController {
-    var appData:AppValues = AppValues(team:"Mystic")
-    
-    @IBOutlet weak var btnChose: UIButton!
+    var teamSave:AppLoader?
+    @IBOutlet weak var btnChoseBlue: UIButton!
+    @IBOutlet weak var btnChoseRed: UIButton!
+    @IBOutlet weak var btnChoseYellow: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        btnChose.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        btnChoseBlue.addTarget(self, action: #selector(buttonBlueAction), for: .touchUpInside)
+        btnChoseRed.addTarget(self, action: #selector(buttonRedAction), for: .touchUpInside)
+        btnChoseYellow.addTarget(self, action: #selector(buttonYellowAction), for: .touchUpInside)
     }
-    func buttonAction(sender: UIButton!) {
-        saveTeam()
+    func buttonBlueAction(sender: UIButton!) {
+        teamSave = AppLoader(team:"Mystic")
+        teamSave!.saveTeam()
+    }
+    func buttonYellowAction(sender: UIButton!) {
+        teamSave = AppLoader(team:"Instinct")
+        teamSave!.saveTeam()
+    }
+    func buttonRedAction(sender: UIButton!) {
+        teamSave = AppLoader(team:"Valor")
+        teamSave!.saveTeam()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    private func saveTeam() {
-        _ = NSKeyedArchiver.archiveRootObject(appData, toFile: AppValues.ArchiveURL.path)
-    }
 }
+
+

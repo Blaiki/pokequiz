@@ -32,3 +32,19 @@ class AppValues: NSObject, NSCoding{
         self.init(team: team)
     }
 }
+
+class AppLoader{
+    var appData:AppValues?
+    init(){
+        appData = nil
+    }
+    init(team:String) {
+        appData = AppValues(team:team)
+    }
+    func saveTeam() {
+        _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default"), toFile: AppValues.ArchiveURL.path)
+    }
+    func loadTeam () -> AppValues? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? AppValues
+    }
+}

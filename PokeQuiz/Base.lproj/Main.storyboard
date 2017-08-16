@@ -243,7 +243,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnChose" destination="gk2-Il-Vxs" id="lB3-l1-NpD"/>
+                        <outlet property="btnChoseBlue" destination="gk2-Il-Vxs" id="mPg-rk-7XC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBN-uJ-x04" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,7 +253,7 @@
         <!--View Controller Valor-->
         <scene sceneID="ti1-Be-COg">
             <objects>
-                <viewController storyboardIdentifier="ViewControllerValor" id="hYA-du-A8J" userLabel="View Controller Valor" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerValor" id="hYA-du-A8J" userLabel="View Controller Valor" customClass="TeamViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="owm-tY-SSD"/>
                         <viewControllerLayoutGuide type="bottom" id="rRE-lV-bE1"/>
@@ -304,6 +304,9 @@
                             <constraint firstItem="Cfl-UO-MZL" firstAttribute="top" secondItem="nsa-GN-qtK" secondAttribute="top" constant="15" id="toq-Ud-qGu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChoseRed" destination="KPG-2K-3oL" id="iHy-w5-0dC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wlt-Xv-Vdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -312,7 +315,7 @@
         <!--View Controller Instinct-->
         <scene sceneID="ATi-Yb-Q4T">
             <objects>
-                <viewController storyboardIdentifier="ViewControllerInstinct" id="adU-gN-gPy" userLabel="View Controller Instinct" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerInstinct" id="adU-gN-gPy" userLabel="View Controller Instinct" customClass="TeamViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RFv-6f-M2A"/>
                         <viewControllerLayoutGuide type="bottom" id="5M8-Eo-4Lm"/>
@@ -362,6 +365,9 @@
                             <constraint firstItem="1uw-sF-kdu" firstAttribute="centerX" secondItem="SrP-dc-h4V" secondAttribute="centerX" id="uTa-nq-OmY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChoseYellow" destination="ylQ-dG-x8E" id="iBr-Hg-bbI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZ7-kU-ef9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,6 +386,6 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eFB-kc-397"/>
+        <segue reference="Pbe-PG-YnW"/>
     </inferredMetricsTieBreakers>
 </document>
