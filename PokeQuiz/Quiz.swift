@@ -25,6 +25,9 @@ class Quiz: NSObject, NSCoding{
         self.name = name
         super.init()
     }
+    func test(){
+        return "JUST A TEST FUNC"
+    }
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(image, forKey: PropertyKey.image)
