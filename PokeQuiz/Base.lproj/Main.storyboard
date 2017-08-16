@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hBt-Az-AvX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Menu View Controller" customClass="ViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMenu" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="Menu View Controller" customClass="ViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -202,7 +202,7 @@
         <!--Choose View Controller-->
         <scene sceneID="cdY-rw-mrJ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="max" id="hBt-Az-AvX" customClass="ChooseViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="firstStart" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="max" id="hBt-Az-AvX" customClass="ChooseViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnU-1f-0e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850" y="393"/>
@@ -210,7 +210,7 @@
         <!--View Controller Mystic-->
         <scene sceneID="sdc-Ch-xMT">
             <objects>
-                <viewController storyboardIdentifier="ViewControllerMystic" id="1fz-IB-q6d" userLabel="View Controller Mystic" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerMystic" id="1fz-IB-q6d" userLabel="View Controller Mystic" customClass="TeamViewController" customModule="PokeQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bN6-Nh-33Y"/>
                         <viewControllerLayoutGuide type="bottom" id="l1o-3a-apz"/>
@@ -230,7 +230,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="XYs-6F-uqA"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Pbe-PG-YnW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v80-aX-zae" userLabel="btnAboutTeamM">
@@ -261,6 +261,9 @@
                             <constraint firstItem="gk2-Il-Vxs" firstAttribute="centerX" secondItem="zGF-nq-cvj" secondAttribute="centerX" id="nb6-oI-gEr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnChose" destination="gk2-Il-Vxs" id="lB3-l1-NpD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cBN-uJ-x04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -398,7 +401,7 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vdp-Ol-rYZ"/>
+        <segue reference="Pbe-PG-YnW"/>
         <segue reference="XEJ-72-oZV"/>
         <segue reference="XYs-6F-uqA"/>
     </inferredMetricsTieBreakers>
