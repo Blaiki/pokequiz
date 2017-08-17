@@ -28,11 +28,11 @@ class AnswerLabel: UIStackView {
     letterLabel.textColor = UIColor.white
     letterLabel.backgroundColor = teamColor
     
-        let letterLabelHeight = NSLayoutConstraint(item: letterLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)
+        let letterLabelHeight = NSLayoutConstraint(item: letterLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30)
         letterLabel.addConstraint(letterLabelHeight)
         
         let letterLabelWidth = NSLayoutConstraint(item: letterLabel, attribute: .width, relatedBy: .equal
-            , toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)
+            , toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30)
         letterLabel.addConstraint(letterLabelWidth)
         
         // Initialize the letter stackview and add constraints

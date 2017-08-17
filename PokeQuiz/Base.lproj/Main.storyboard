@@ -161,11 +161,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2e-Qf-1sK">
-                                <rect key="frame" x="25" y="417" width="20" height="20"/>
+                                <rect key="frame" x="25" y="407" width="30" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.19221686311354202" blue="0.09850504871313337" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="ZyH-ER-OYA"/>
-                                    <constraint firstAttribute="height" constant="20" id="i8S-gi-RHO"/>
+                                    <constraint firstAttribute="width" constant="30" id="ZyH-ER-OYA"/>
+                                    <constraint firstAttribute="height" constant="30" id="i8S-gi-RHO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
