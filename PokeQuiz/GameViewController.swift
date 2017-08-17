@@ -22,12 +22,10 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let testBtn1:UIButton = btnGenerator(title: "btn1", bgColor: .blue,tag:1)
-        let testBtn2:UIButton = btnGenerator(title: "btn2", bgColor: .brown,tag:2)
-        let testBtn3:UIButton = btnGenerator(title: "btn3", bgColor: .red,tag:3)
-        lastRowBtnStack.addArrangedSubview(testBtn1)
-        lastRowBtnStack.addArrangedSubview(testBtn2)
-        lastRowBtnStack.addArrangedSubview(testBtn3)
+        var str = "Hello,playgrou"
+        var letterBox = Array(str.characters)
+        genFirstRow(array: letterBox, color: .red)
+        genSecondRow(array: letterBox, color: .red)
         // Do any additional setup after loading the view.
     }
 
@@ -54,7 +52,17 @@ class GameViewController: UIViewController {
             btn.backgroundColor = UIColor.brown
         }
     }
-    
+    func genFirstRow(array:[Character],color:UIColor){
+        for value in 0 ... 6{
+            firstRowBtnStack.addArrangedSubview(btnGenerator(title: String(array[value]), bgColor: color, tag: value))
+        }
+    }
+    func genSecondRow(array:[Character],color:UIColor){
+            for value in 7 ... 13{
+            lastRowBtnStack.addArrangedSubview(btnGenerator(title: String(array[value]), bgColor: color, tag: value))
+            }
+
+    }
     func btnGenerator(title:String,bgColor:UIColor,tag:Int)->UIButton{
         let button:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         button.backgroundColor = bgColor
