@@ -14,6 +14,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var lbQuestion: UILabel!
     @IBOutlet weak var imgPoke: UIImageView!
     
+    @IBOutlet weak var labelStack: UIStackView!
+    @IBOutlet weak var firstRowBtnStack: UIStackView!
+    @IBOutlet weak var lastRowBtnStack: UIStackView!
     
     
 
