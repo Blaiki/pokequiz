@@ -175,7 +175,7 @@
                                             <constraint firstAttribute="height" constant="40" id="h6K-RP-9aK"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-l1-ha4">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-l1-ha4">
                                         <rect key="frame" x="0.0" y="80" width="345" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xSo-cr-Ymt"/>

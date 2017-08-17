@@ -22,7 +22,14 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let testBtn1:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        testBtn1.backgroundColor = UIColor.blue
+        testBtn1.setTitle("test1", for: .normal)
+        let testBtn2:UIButton = UIButton(frame: CGRect(x: 100, y: 0, width: 100, height: 40))
+        testBtn2.backgroundColor = UIColor.red
+        testBtn2.setTitle("test2", for: .normal)
+        lastRowBtnStack.addArrangedSubview(testBtn1)
+        lastRowBtnStack.addArrangedSubview(testBtn2)
         // Do any additional setup after loading the view.
     }
 
