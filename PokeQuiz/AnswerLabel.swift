@@ -13,6 +13,8 @@ class AnswerLabel: UIStackView {
     var letterLabelStackView = UIStackView()
     
     var letterLabel = UILabel()
+    
+    // TODO set the correct team color
     var teamColor = UIColor.red
     
     override init(frame: CGRect) {
