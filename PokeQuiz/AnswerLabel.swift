@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LetterButton: UIStackView {
+class AnswerLabel: UIStackView {
 
     var letterLabelStackView = UIStackView()
     
