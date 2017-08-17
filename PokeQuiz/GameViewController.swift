@@ -9,6 +9,13 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    // Outlets
+    @IBOutlet weak var lbQuestion: UILabel!
+    @IBOutlet weak var imgPoke: UIImageView!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +27,16 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+  
+    // Adding Sqaures below the Pokemon picture
+    func addResultSquares() {
+        // TODO
+        
     }
-    */
-
+    
+    // Adding 14 Letterbuttons
+    func addLetterButton() {
+        // TODO
+        
+    }
 }
