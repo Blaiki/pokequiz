@@ -12,7 +12,7 @@ class LetterButtons: UIStackView {
     
     var letterButtonsStackView = UIStackView()
     
-    var buttonLabel = UILabel()
+    var buttonLabel = UIButton()
     
     // TODO set the correct team color
     var teamColor = UIColor.red
@@ -24,8 +24,7 @@ class LetterButtons: UIStackView {
         axis = .horizontal
         
         // Initialize the letter label and add constraints
-        buttonLabel.textAlignment = .center
-        buttonLabel.textColor = UIColor.white
+        buttonLabel.contentHorizontalAlignment = .center
         buttonLabel.backgroundColor = teamColor
         
         let letterButtonsHeight = NSLayoutConstraint(item: buttonLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30)
@@ -51,6 +50,6 @@ class LetterButtons: UIStackView {
     
     // Set letterLabel text
     func setLetterLabelText(letterText: String) {
-        buttonLabel.text = letterText
+        
     }
 }
