@@ -28,11 +28,11 @@ class LetterButtons: UIStackView {
         buttonLabel.textColor = UIColor.white
         buttonLabel.backgroundColor = teamColor
         
-        let letterButtonsHeight = NSLayoutConstraint(item: buttonLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 10)
+        let letterButtonsHeight = NSLayoutConstraint(item: buttonLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)
         buttonLabel.addConstraint(letterButtonsHeight)
         
         let letterButtonsWidth = NSLayoutConstraint(item: buttonLabel, attribute: .width, relatedBy: .equal
-            , toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 10)
+            , toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20)
         buttonLabel.addConstraint(letterButtonsWidth)
         
         // Initialize the letter stackview and add constraints

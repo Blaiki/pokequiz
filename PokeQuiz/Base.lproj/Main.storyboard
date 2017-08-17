@@ -160,9 +160,22 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="eFB-kc-397"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2e-Qf-1sK">
+                                <rect key="frame" x="25" y="417" width="20" height="20"/>
+                                <color key="backgroundColor" red="1" green="0.19221686311354202" blue="0.09850504871313337" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="ZyH-ER-OYA"/>
+                                    <constraint firstAttribute="height" constant="20" id="i8S-gi-RHO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="T2e-Qf-1sK" secondAttribute="bottom" constant="230" id="2FA-E1-nYo"/>
+                            <constraint firstItem="T2e-Qf-1sK" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" constant="25" id="2df-F3-kCo"/>
                             <constraint firstItem="uPp-8M-Bzg" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="100" id="47o-Fg-K87"/>
                             <constraint firstItem="56b-5a-jbD" firstAttribute="centerX" secondItem="xxh-AJ-EAa" secondAttribute="centerX" id="EBA-fF-HQE"/>
                             <constraint firstItem="Qmi-Nx-k5u" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" id="N4J-bw-Img"/>
