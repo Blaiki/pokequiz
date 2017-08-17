@@ -163,7 +163,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4GG-oS-0LT">
                                 <rect key="frame" x="15" y="501" width="345" height="150"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exq-YU-UC3">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="exq-YU-UC3">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OUq-xb-DKH"/>

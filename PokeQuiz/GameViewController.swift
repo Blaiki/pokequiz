@@ -23,9 +23,12 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var str = "Hello,playgrou"
-        var letterBox = Array(str.characters)
+        let key:String = "Hello"
+        let letterBox = Array(str.characters)
         genFirstRow(array: letterBox, color: .red)
         genSecondRow(array: letterBox, color: .red)
+        genLabel(length: key.characters.count,color: .red)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -42,16 +45,24 @@ class GameViewController: UIViewController {
     
     func buttonAction(sender: UIButton!) {
         let btn: UIButton = sender
-        if btn.tag == 1 {
-            btn.backgroundColor = UIColor.black
+        if btn.tag == 0 {
+            btn.isHidden = true
         }
-        if btn.tag == 2 {
-            btn.backgroundColor = UIColor.red
+        if btn.tag == 1 {
+            btn.isEnabled = false
+            btn.alpha = 0.0
         }
         if btn.tag == 3 {
             btn.backgroundColor = UIColor.brown
         }
     }
+    
+    func genLabel(length:Int,color: UIColor){
+        for value in 0 ... length-1{
+            labelStack.addArrangedSubview(btnGenerator(title:" ", bgColor: color, tag: value+20))
+        }
+    }
+    
     func genFirstRow(array:[Character],color:UIColor){
         for value in 0 ... 6{
             firstRowBtnStack.addArrangedSubview(btnGenerator(title: String(array[value]), bgColor: color, tag: value))
