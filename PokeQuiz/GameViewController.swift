@@ -22,14 +22,12 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let testBtn1:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        testBtn1.backgroundColor = UIColor.blue
-        testBtn1.setTitle("test1", for: .normal)
-        let testBtn2:UIButton = UIButton(frame: CGRect(x: 100, y: 0, width: 100, height: 40))
-        testBtn2.backgroundColor = UIColor.red
-        testBtn2.setTitle("test2", for: .normal)
+        let testBtn1:UIButton = btnGenerator(title: "btn1", bgColor: .blue,tag:1)
+        let testBtn2:UIButton = btnGenerator(title: "btn2", bgColor: .brown,tag:2)
+        let testBtn3:UIButton = btnGenerator(title: "btn3", bgColor: .red,tag:3)
         lastRowBtnStack.addArrangedSubview(testBtn1)
         lastRowBtnStack.addArrangedSubview(testBtn2)
+        lastRowBtnStack.addArrangedSubview(testBtn3)
         // Do any additional setup after loading the view.
     }
 
@@ -42,6 +40,28 @@ class GameViewController: UIViewController {
     func addResultSquares() {
         // TODO
         
+    }
+    
+    func buttonAction(sender: UIButton!) {
+        let btn: UIButton = sender
+        if btn.tag == 1 {
+            btn.backgroundColor = UIColor.black
+        }
+        if btn.tag == 2 {
+            btn.backgroundColor = UIColor.red
+        }
+        if btn.tag == 3 {
+            btn.backgroundColor = UIColor.brown
+        }
+    }
+    
+    func btnGenerator(title:String,bgColor:UIColor,tag:Int)->UIButton{
+        let button:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
+        button.backgroundColor = bgColor
+        button.setTitle(title, for: .normal)
+        button.addTarget(self, action: #selector(buttonAction), for: UIControlEvents.touchUpInside)
+        button.tag = tag
+        return button
     }
     
     // Adding 14 Letterbuttons
