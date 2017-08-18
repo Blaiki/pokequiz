@@ -18,40 +18,23 @@ class GameViewController: UIViewController {
     @IBOutlet weak var firstRowBtnStack: UIStackView!
     @IBOutlet weak var lastRowBtnStack: UIStackView!
     
-    var startImage:UIImage = UIImage()
-    var shadedImage:UIImage = UIImage()
     var btnArr = [BtnTagged]()
-    let key:String = "Hello"
-    var str = "Hello,playgrou"
-    var letterBox:[Character] = []
+    var quiz:QuizItem? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        letterBox = Array(str.characters)
+        quiz = QuizItem(key: "hello", image: imgPoke.image!)
+        var letterBox:[Character] = quiz!.generateArray()
+        letterBox.shuffle()
+        imgPoke.image = quiz!.imageShadow()!
         genFirstRow(array: letterBox, color: .red)
         genSecondRow(array: letterBox, color: .red)
-        genLabel(length: key.characters.count,color: .red)
-        //setup images
-        startImage = imgPoke.image!
-        shadedImage = imageShadow(image: startImage)!
-        imgPoke.image = shadedImage
+        genLabel(length: quiz!.key.characters.count,color: .red)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func imageShadow(image:UIImage) -> UIImage? {
-        let startImage = CIImage(image:image)
-        if let filter = CIFilter(name: "CIFalseColor") {
-            filter.setValue(startImage, forKey: kCIInputImageKey)
-            filter.setValue(CIColor.black(), forKey: "inputColor0")
-            filter.setValue(CIColor.black(), forKey: "inputColor1")
-            let newImage = UIImage(ciImage: filter.outputImage!)
-            return newImage
-        }
-        return nil
     }
   
     // Adding Sqaures below the Pokemon picture
@@ -73,7 +56,7 @@ class GameViewController: UIViewController {
             btnArr[index].thisBtn.setTitle(btn.title(for: .normal), for: .normal)
             btnArr[index].prevBtn = btn
             if(checkCorrect()){
-                imgPoke.image = startImage
+                imgPoke.image = quiz!.image
             }
         }
         if btn.tag >= 20 {
@@ -90,7 +73,7 @@ class GameViewController: UIViewController {
                 tmpStr += btnArr[index].thisBtn.title(for: .normal)!
             }
         }
-        if(tmpStr == key){
+        if(tmpStr == quiz!.key){
             return true
         }
         return false

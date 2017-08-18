@@ -7,45 +7,58 @@
 //
 
 import UIKit
-import os.log
 
-struct PropertyKey {
-    static let name = "name"
-    static let image = "image"
-    static let attempt = "attempt"
-}
 
-class QuizItem: NSObject, NSCoding{
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("quiz")
+
+class QuizItem{
     
-    var name: String
-    var image: UIImage
-    var attempt: Int = 0
-    init(name:String,image:UIImage,attempt: Int) {
+    var key:String
+    var image:UIImage
+    
+    init(key:String,image:UIImage) {
+        self.key = key
         self.image = image
-        self.name = name
-        self.attempt = attempt
-        super.init()
     }
-    func test()->String{
-        return "JUST A TEST FUNC"
+    
+    private func strUpLenghts(str:String)->String{
+        var tmpStr = str
+        if(tmpStr.characters.count<14){
+            tmpStr+=generateRandom()
+            tmpStr = strUpLenghts(str: tmpStr)
+        }
+        return tmpStr
     }
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(name, forKey: PropertyKey.name)
-        aCoder.encode(image, forKey: PropertyKey.image)
-        aCoder.encode(attempt, forKey: PropertyKey.attempt)
+    
+    
+    public func generateArray()->[Character]{
+        return Array(strUpLenghts(str: key).characters)
     }
-    required convenience init?(coder aDecoder: NSCoder) {
-        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
-            return nil
+    
+    private func generateRandom()->String{
+        let charcode:Int = Int(arc4random_uniform(26) + 97)
+        let us:UnicodeScalar = UnicodeScalar.init(charcode)!
+        let char:Character = Character.init(us)
+        return String(char)
+    }
+    
+    public func imageShadow() -> UIImage? {
+        let startImage = CIImage(image:image)
+        if let filter = CIFilter(name: "CIFalseColor") {
+            filter.setValue(startImage, forKey: kCIInputImageKey)
+            filter.setValue(CIColor.black(), forKey: "inputColor0")
+            filter.setValue(CIColor.black(), forKey: "inputColor1")
+            let newImage = UIImage(ciImage: filter.outputImage!)
+            return newImage
         }
-        guard let image = aDecoder.decodeObject(forKey: PropertyKey.image) as? UIImage else {
-            return nil
+        return nil
+    }
+}
+extension Array {
+    mutating func shuffle () {
+        for i in (0..<self.count).reversed() {
+            let ix1 = i
+            let ix2 = Int(arc4random_uniform(UInt32(i+1)))
+            (self[ix1], self[ix2]) = (self[ix2], self[ix1])
         }
-        guard let attempt = aDecoder.decodeObject(forKey: PropertyKey.attempt) as? Int else {
-            return nil
-        }
-        self.init(name: name, image: image,attempt:attempt)
     }
 }
