@@ -23,7 +23,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //spot to load new image
         quiz = QuizItem(key: "hello", image: imgPoke.image!)
+        
         var letterBox:[Character] = quiz!.generateArray()
         letterBox.shuffle()
         imgPoke.image = quiz!.imageShadow()!
@@ -105,6 +107,7 @@ class GameViewController: UIViewController {
                 btnArr[index].thisBtn.setTitle(" ", for: .normal)
             }
         }
+        quiz!.attempt += 1
     }
     
     func clearLabel(btn:UIButton){
