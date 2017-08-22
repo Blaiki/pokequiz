@@ -29,18 +29,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         if(firstScreen){
             self.window?.rootViewController = firstViewController
-//            let bundlePath = Bundle.main.path(forResource: "pokeQuiz", ofType: ".sqlite")
-//            let path = NSSearchPathForDirectoriesInDomains(
-//                .documentDirectory, .userDomainMask, true
-//                ).first!
-//            let fileManager = FileManager.default
-//            let fullDestPath = NSURL(fileURLWithPath: path).appendingPathComponent("pokeQuiz.sqlite")
-//            do{
-//                try fileManager.copyItem(atPath: bundlePath!, toPath: fullDestPath!.path)
-//            }catch{
-//                print("\n")
-//                print(error)
-//            }
+            let bundlePath = Bundle.main.path(forResource: "pokeQuiz", ofType: ".sqlite")
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+                ).first!
+            let fileManager = FileManager.default
+            let fullDestPath = NSURL(fileURLWithPath: path).appendingPathComponent("pokeQuiz.sqlite")
+            do{
+                try fileManager.copyItem(atPath: bundlePath!, toPath: fullDestPath!.path)
+            }catch{
+                print("\n")
+                print(error)
+            }
         }else{
             self.window?.rootViewController = mainViewController
         }

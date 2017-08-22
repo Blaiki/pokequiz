@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite
 
 
 
@@ -15,11 +16,14 @@ class QuizItem{
     var key:String
     var image:UIImage
     var attempt:Int = 0
+    var id:Int?
     
     init(key:String,image:UIImage) {
         self.key = key
         self.image = image
+        getDbRow()
     }
+
     
     private func strUpLenghts(str:String)->String{
         var tmpStr = str
@@ -30,6 +34,46 @@ class QuizItem{
         return tmpStr
     }
     
+    private func getDbRow(){
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+            ).first!
+        do {
+            let db = try Connection("\(path)/pokeQuiz.sqlite")
+            let id = Expression<Int64>("id")
+            let name = Expression<String>("name")
+            let image = Expression<SQLite.Blob>("image")
+            let visited = Expression<Bool>("visited")
+            let data = Table("pokeData")
+            let query = data.select(id,name,image)
+                .filter(!visited)
+            if let item = try db.pluck(query) {
+                self.key = item[name]
+                self.image = UIImage(data:  Data.fromDatatypeValue(item[image]))!
+                self.id = Int(truncatingBitPattern: item[id])
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+    public func updateCurAsViewed(){
+        if let itemId = self.id {
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+                ).first!
+            do {
+                let db = try Connection("\(path)/pokeQuiz.sqlite")
+                let id = Expression<Int64>("id")
+                let visited = Expression<Bool>("visited")
+                let data = Table("pokeData")
+                let query = data.filter(id == Int64(itemId))
+                try db.run(query.update(visited <- true))
+            }catch{
+                print(error)
+            }
+        }
+    }
     
     public func generateArray()->[Character]{
         return Array(strUpLenghts(str: key).characters)

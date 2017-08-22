@@ -11,6 +11,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     // Outlets
+    @IBOutlet var baseView: UIView!
     @IBOutlet weak var lbQuestion: UILabel!
     @IBOutlet weak var imgPoke: UIImageView!
     
@@ -23,9 +24,11 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //spot to load new image
+            generateLayout()
+        }
+    
+    func generateLayout(){
         quiz = QuizItem(key: "hello", image: imgPoke.image!)
-        
         var letterBox:[Character] = quiz!.generateArray()
         letterBox.shuffle()
         imgPoke.image = quiz!.imageShadow()!
@@ -33,17 +36,28 @@ class GameViewController: UIViewController {
         genSecondRow(array: letterBox, color: .red)
         genLabel(length: quiz!.key.characters.count,color: .red)
     }
-
+    
+    func clearLayout(){
+        for sub in firstRowBtnStack.arrangedSubviews{
+            //firstRowBtnStack.removeArrangedSubview(sub)
+            sub.removeFromSuperview()
+        }
+        for sub in lastRowBtnStack.arrangedSubviews{
+            //lastRowBtnStack.removeArrangedSubview(sub)
+            sub.removeFromSuperview()
+        }
+        for sub in labelStack.arrangedSubviews{
+            //labelStack.removeArrangedSubview(sub)
+            sub.removeFromSuperview()
+        }
+        btnArr = [BtnTagged]()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
   
-    // Adding Sqaures below the Pokemon picture
-    func addResultSquares() {
-        // TODO
-        
-    }
     
     func buttonAction(sender: UIButton!) {
         let btn: UIButton = sender
@@ -59,6 +73,11 @@ class GameViewController: UIViewController {
             btnArr[index].prevBtn = btn
             if(checkCorrect()){
                 imgPoke.image = quiz!.image
+                quiz!.updateCurAsViewed()
+                clearLayout()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                    self.generateLayout()
+                })
             }
         }
         if btn.tag >= 20 {
