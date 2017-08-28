@@ -20,14 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
-        let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController
         // here
         if let values:AppValues = loader.loadTeam() {
             firstScreen=false
             ViewController.teamName = values.team
         }
         if(firstScreen){
+            let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController
             self.window?.rootViewController = firstViewController
             let bundlePath = Bundle.main.path(forResource: "pokeQuiz", ofType: ".sqlite")
             let path = NSSearchPathForDirectoriesInDomains(
@@ -42,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error)
             }
         }else{
+            let mainViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "mainMenu") as! ViewController
             self.window?.rootViewController = mainViewController
         }
         self.window?.makeKeyAndVisible()

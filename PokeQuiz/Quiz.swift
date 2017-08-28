@@ -35,27 +35,28 @@ class QuizItem{
     }
     
     private func getDbRow(){
-        let path = NSSearchPathForDirectoriesInDomains(
-            .documentDirectory, .userDomainMask, true
-            ).first!
-        do {
-            let db = try Connection("\(path)/pokeQuiz.sqlite")
-            let id = Expression<Int64>("id")
-            let name = Expression<String>("name")
-            let image = Expression<SQLite.Blob>("image")
-            let visited = Expression<Bool>("visited")
-            let data = Table("pokeData")
-            let query = data.select(id,name,image)
-                .filter(!visited)
-            if let item = try db.pluck(query) {
-                self.key = item[name]
-                self.image = UIImage(data:  Data.fromDatatypeValue(item[image]))!
-                self.id = Int(truncatingBitPattern: item[id])
+        self.id = getNextId()
+        if(id != -1){
+            let path = NSSearchPathForDirectoriesInDomains(
+                .documentDirectory, .userDomainMask, true
+                ).first!
+            do {
+                let db = try Connection("\(path)/pokeQuiz.sqlite")
+                let id = Expression<Int64>("id")
+                let name = Expression<String>("name")
+                let image = Expression<SQLite.Blob>("image")
+                let data = Table("pokeData")
+                let query = data.filter(id == Int64(self.id!))
+                if let item = try db.pluck(query) {
+                    self.key = item[name]
+                    self.image = UIImage(data:  Data.fromDatatypeValue(item[image]))!
+                }
+            }catch{
+                print(error)
             }
-        }catch{
-            print(error)
+
         }
-    }
+}
     
     public func updateCurAsViewed(){
         if let itemId = self.id {
@@ -73,6 +74,27 @@ class QuizItem{
                 print(error)
             }
         }
+    }
+    public func getNextId()->Int{
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+            ).first!
+        do {
+            let db = try Connection("\(path)/pokeQuiz.sqlite")
+            let id = Expression<Int64>("id")
+            let visited = Expression<Bool>("visited")
+            let data = Table("pokeData")
+            let query = data.select(id).filter(!visited)
+            let all = Array(try db.prepare(query))
+            if (all.count > 0){
+                return Int(all[Int(arc4random_uniform(UInt32(all.count)))][id])
+            }else{
+                return -1
+            }
+        }catch{
+            print(error)
+        }
+        return -1
     }
     
     public func generateArray()->[Character]{
