@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         // here
-        if let values:AppValues = loader.loadTeam() {
+        if let values:AppValues = loader.loadData() {
             firstScreen=false
             ViewController.teamName = values.team
         }
