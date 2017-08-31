@@ -63,13 +63,20 @@ class GameViewController: UIViewController {
             sub.removeFromSuperview()
         }
         btnArr = [BtnTagged]()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
+    
+    @objc private func nextButtonAction(sender: UIButton!) {
+        sender.removeFromSuperview()
+        firstRowBtnStack.arrangedSubviews.first?.removeFromSuperview()
+        labelStack.arrangedSubviews.first?.removeFromSuperview()
+        startNext()
+    }
     
     @objc private func buttonAction(sender: UIButton!) {
         let btn: UIButton = sender
@@ -84,14 +91,7 @@ class GameViewController: UIViewController {
             btnArr[index].thisBtn.setTitle(btn.title(for: .normal), for: .normal)
             btnArr[index].prevBtn = btn
             if(checkCorrect()){
-                imgPoke.image = quiz!.image
-                addBank(attempts: quiz!.attempt)
-                saveData()
-                quiz!.updateCurAsViewed()
-                clearLayout()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-                    self.generateLayout()
-                })
+                prepareForNext()
             }
         }
         if btn.tag >= 20 {
@@ -100,6 +100,35 @@ class GameViewController: UIViewController {
             }
         }
     }
+    
+    private func prepareForNext(){
+        imgPoke.image = quiz!.image
+        addBank(attempts: quiz!.attempt)
+        saveData()
+        quiz!.updateCurAsViewed()
+        clearLayout()
+        
+        let gratzLabel = UILabel(frame: labelStack.frame)
+        gratzLabel.text = "Success, thats it"
+        gratzLabel.textColor = UIColor.white
+        labelStack.addArrangedSubview(gratzLabel)
+        let keyLabel = UILabel(frame: firstRowBtnStack.frame)
+        keyLabel.text = quiz?.key
+        keyLabel.textColor = UIColor.red
+        firstRowBtnStack.addArrangedSubview(keyLabel)
+        let nextBtn = UIButton(frame: lastRowBtnStack.frame)
+        nextBtn.setTitle("Next", for: .normal)
+        nextBtn.backgroundColor = UIColor.green
+        nextBtn.addTarget(self, action: #selector(nextButtonAction), for: UIControlEvents.touchUpInside)
+        lastRowBtnStack.addArrangedSubview(nextBtn)
+    }
+    
+    private func startNext(){
+        //DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+        generateLayout()
+        //})
+    }
+    
     private func addBank(attempts:Int){
         switch attempts {
         case 1:
