@@ -17,8 +17,7 @@ class TeamYellowViewController: UIViewController {
     }
     func buttonYellowAction(sender: UIButton!) {
         let appData = AppValues(team:"Instinct",id:-1,bank:0)
-        let teamSave:AppLoader = AppLoader()
-        teamSave.saveTeam(appData: appData)
+        AppLoader.saveTeam(appData: appData)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

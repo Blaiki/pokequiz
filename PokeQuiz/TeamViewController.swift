@@ -19,8 +19,7 @@ class TeamViewController: UIViewController {
     }
     func buttonBlueAction(sender: UIButton!) {
         let appData = AppValues(team:"Mystic",id:-1,bank:0)
-        let teamSave:AppLoader = AppLoader()
-        teamSave.saveTeam(appData: appData)
+        AppLoader.saveTeam(appData: appData)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

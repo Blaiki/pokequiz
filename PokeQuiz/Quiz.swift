@@ -23,6 +23,12 @@ class QuizItem{
         self.image = image
         getDbRow()
     }
+    init(id:Int){
+       self.id = id
+       self.key = ""
+       self.image = UIImage()
+       getDbRowById()
+    }
 
     
     private func strUpLenghts(str:String)->String{
@@ -32,6 +38,25 @@ class QuizItem{
             tmpStr = strUpLenghts(str: tmpStr)
         }
         return tmpStr
+    }
+    private func getDbRowById(){
+        let path = NSSearchPathForDirectoriesInDomains(
+            .documentDirectory, .userDomainMask, true
+            ).first!
+        do {
+            let db = try Connection("\(path)/pokeQuiz.sqlite")
+            let id = Expression<Int64>("id")
+            let name = Expression<String>("name")
+            let image = Expression<SQLite.Blob>("image")
+            let data = Table("pokeData")
+            let query = data.filter(id == Int64(self.id!))
+            if let item = try db.pluck(query) {
+                self.key = item[name]
+                self.image = UIImage(data:  Data.fromDatatypeValue(item[image]))!
+            }
+        }catch{
+            print(error)
+        }
     }
     
     private func getDbRow(){

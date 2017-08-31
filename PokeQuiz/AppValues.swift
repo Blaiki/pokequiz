@@ -44,22 +44,15 @@ class AppValues: NSObject, NSCoding{
         guard let bank = aDecoder.decodeObject(forKey: AppProps.bank) as? Int else {
             return nil
         }
-        self.init(team: team,id:id,bank:bank)
+        self.init(team:team,id:id,bank:bank)
     }
 }
 
 class AppLoader{
-    init(){
-    }
-    func saveTeam(appData:AppValues?) {
+    static func saveTeam(appData:AppValues?) {
         _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default",id:-1,bank:0), toFile: AppValues.ArchiveURL.path)
     }
-//    func saveData(data:AppValues,id:Int){
-//        appData = data
-//        appData!.id = id
-//        _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default",id:-1,bank:0), toFile: AppValues.ArchiveURL.path)
-//    }
-    func loadData () -> AppValues? {
+    static func loadData () -> AppValues? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? AppValues
     }
 }
