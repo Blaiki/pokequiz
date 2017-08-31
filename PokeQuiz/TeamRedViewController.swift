@@ -9,7 +9,6 @@
 import UIKit
 
 class TeamRedViewController: UIViewController {
-    var teamSave:AppLoader?
     @IBOutlet weak var btnChoseRed: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +16,8 @@ class TeamRedViewController: UIViewController {
         btnChoseRed.addTarget(self,action: #selector(buttonRedAction), for: .touchUpInside)
     }
     func buttonRedAction(sender: UIButton!) {
-        teamSave = AppLoader(team:"Valor")
-        teamSave!.saveTeam()
+        let appData = AppValues(team:"Valor",id:-1,bank:0)
+        AppLoader.saveTeam(appData: appData)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

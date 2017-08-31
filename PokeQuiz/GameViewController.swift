@@ -21,14 +21,24 @@ class GameViewController: UIViewController {
     
     var btnArr = [BtnTagged]()
     var quiz:QuizItem? = nil
+    var firstOpen = true
+    static var loadedId:Int = -1
+    static var bank:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
             generateLayout()
         }
     
-    func generateLayout(){
-        quiz = QuizItem(key: "hello", image: imgPoke.image!)
+    private func generateLayout(){
+        if(firstOpen && GameViewController.loadedId != -1){
+            quiz = QuizItem(id:GameViewController.loadedId)
+            firstOpen = false
+        }else{
+            quiz = QuizItem(key: "hello", image: imgPoke.image!)
+            GameViewController.loadedId = (quiz!.id)!
+            saveData()
+        }
         var letterBox:[Character] = quiz!.generateArray()
         letterBox.shuffle()
         imgPoke.image = quiz!.imageShadow()!
@@ -37,7 +47,7 @@ class GameViewController: UIViewController {
         genLabel(length: quiz!.key.characters.count,color: .red)
     }
     
-    func clearLayout(){
+    private func clearLayout(){
         for sub in firstRowBtnStack.arrangedSubviews{
             //firstRowBtnStack.removeArrangedSubview(sub)
             sub.removeFromSuperview()
@@ -59,7 +69,7 @@ class GameViewController: UIViewController {
     }
   
     
-    func buttonAction(sender: UIButton!) {
+    @objc private func buttonAction(sender: UIButton!) {
         let btn: UIButton = sender
         if btn.tag < 20 {
             btn.isEnabled = false
@@ -87,7 +97,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func checkCorrect()->Bool{
+    private func checkCorrect()->Bool{
         var tmpStr:String = ""
         for index in 0 ... btnArr.count-1{
             if let _:UIButton = btnArr[index].prevBtn{
@@ -100,7 +110,7 @@ class GameViewController: UIViewController {
         return false
     }
     
-    func genLabel(length:Int,color: UIColor){
+    private func genLabel(length:Int,color: UIColor){
         for value in 0 ... length-1{
             let btn:UIButton = btnGenerator(title:" ", bgColor: color, tag: value+20)
             btnArr.append(BtnTagged(thisBtn: btn,prevBtn:nil))
@@ -108,7 +118,7 @@ class GameViewController: UIViewController {
         }
     }
     
-    func getCurFreeLabel()->Int{
+    private func getCurFreeLabel()->Int{
         for index in 0 ... btnArr.count-1{
             guard let _:UIButton = btnArr[index].prevBtn else {
                 return index
@@ -117,7 +127,7 @@ class GameViewController: UIViewController {
         return -1
     }
     
-    func clearLabels(){
+    private func clearLabels(){
         for index in 0 ... btnArr.count-1{
             if let _:UIButton = btnArr[index].prevBtn{
                 btnArr[index].prevBtn!.isEnabled = true
@@ -129,7 +139,7 @@ class GameViewController: UIViewController {
         quiz!.attempt += 1
     }
     
-    func clearLabel(btn:UIButton){
+    private func clearLabel(btn:UIButton){
         for index in 0 ... btnArr.count-1{
             if(btnArr[index].thisBtn.isEqual(btn)){
                 if let _:UIButton = btnArr[index].prevBtn{
@@ -142,18 +152,18 @@ class GameViewController: UIViewController {
         }
     }
     
-    func genFirstRow(array:[Character],color:UIColor){
+    private func genFirstRow(array:[Character],color:UIColor){
         for value in 0 ... 6{
             firstRowBtnStack.addArrangedSubview(btnGenerator(title: String(array[value]), bgColor: color, tag: value))
         }
     }
-    func genSecondRow(array:[Character],color:UIColor){
+    private func genSecondRow(array:[Character],color:UIColor){
             for value in 7 ... 13{
             lastRowBtnStack.addArrangedSubview(btnGenerator(title: String(array[value]), bgColor: color, tag: value))
             }
 
     }
-    func btnGenerator(title:String,bgColor:UIColor,tag:Int)->UIButton{
+    private func btnGenerator(title:String,bgColor:UIColor,tag:Int)->UIButton{
         let button:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
         button.backgroundColor = bgColor
         button.setTitle(title, for: .normal)
@@ -162,11 +172,11 @@ class GameViewController: UIViewController {
         return button
     }
     
-    // Adding 14 Letterbuttons
-    func addLetterButton() {
-        // TODO
-        
+    private func saveData(){
+        let values = AppValues(team: ViewController.teamName, id: GameViewController.loadedId, bank: GameViewController.bank)
+        AppLoader.saveTeam(appData: values)
     }
+    
 }
 
 struct BtnTagged{

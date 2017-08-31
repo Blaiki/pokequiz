@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var firstScreen:Bool = true
-    let loader:AppLoader = AppLoader()
     
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -21,9 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         // here
-        if let values:AppValues = loader.loadTeam() {
+        if let values:AppValues = AppLoader.loadData() {
             firstScreen=false
             ViewController.teamName = values.team
+            GameViewController.loadedId = values.id
+            GameViewController.bank = values.bank
         }
         if(firstScreen){
             let firstViewController: ChooseViewController = mainStoryboard.instantiateViewController(withIdentifier: "firstStart") as! ChooseViewController

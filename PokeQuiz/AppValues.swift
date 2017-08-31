@@ -10,6 +10,8 @@ import Foundation
 
 struct AppProps {
     static let team = "team"
+    static let id = "id"
+    static let bank = "bank"
 
 }
 
@@ -18,34 +20,39 @@ class AppValues: NSObject, NSCoding{
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("app")
     
     var team:String = "name"
-    init(team:String) {
+    var id:Int = -1
+    var bank:Int = 0
+    
+    init(team:String,id:Int,bank:Int) {
         self.team = team
+        self.id = id
+        self.bank = bank
         super.init()
     }
     func encode(with aCoder: NSCoder) {
         aCoder.encode(team, forKey: AppProps.team)
+        aCoder.encode(id, forKey: AppProps.id)
+        aCoder.encode(bank, forKey: AppProps.bank)
     }
     required convenience init?(coder aDecoder: NSCoder) {
         guard let team = aDecoder.decodeObject(forKey: AppProps.team) as? String else {
             return nil
         }
-        self.init(team: team)
+        guard let id = aDecoder.decodeObject(forKey: AppProps.id) as? Int else {
+            return nil
+        }
+        guard let bank = aDecoder.decodeObject(forKey: AppProps.bank) as? Int else {
+            return nil
+        }
+        self.init(team:team,id:id,bank:bank)
     }
 }
 
 class AppLoader{
-    var appData:AppValues?
-    init(){
-        appData = nil
+    static func saveTeam(appData:AppValues?) {
+        _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default",id:-1,bank:0), toFile: AppValues.ArchiveURL.path)
     }
-    init(team:String) {
-        appData = AppValues(team:team)
-        ViewController.teamName = team
-    }
-    func saveTeam() {
-        _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default"), toFile: AppValues.ArchiveURL.path)
-    }
-    func loadTeam () -> AppValues? {
+    static func loadData () -> AppValues? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? AppValues
     }
 }
