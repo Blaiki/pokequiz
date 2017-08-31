@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-hC-SSJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgMenu2" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-hC-SSJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-TF-gml" userLabel="btnStartGame">
@@ -134,7 +134,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gameBack" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-Nx-k5u">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgMenu2" translatesAutoresizingMaskIntoConstraints="NO" id="Qmi-Nx-k5u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you know that Pokemon?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56b-5a-jbD">
@@ -426,12 +426,12 @@
     </scenes>
     <resources>
         <image name="001" width="233" height="233"/>
+        <image name="bgMenu2" width="360" height="640"/>
         <image name="button2" width="238" height="46"/>
         <image name="button3" width="238" height="46"/>
         <image name="button4" width="238" height="46"/>
         <image name="gameBack" width="360" height="640"/>
         <image name="instinct" width="360" height="640"/>
-        <image name="menu" width="360" height="640"/>
         <image name="mystic" width="360" height="640"/>
         <image name="valor" width="360" height="640"/>
     </resources>
