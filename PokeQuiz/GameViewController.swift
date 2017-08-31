@@ -79,7 +79,6 @@ class GameViewController: UIViewController {
             var index:Int = getCurFreeLabel()
             if(index == -1){
                 clearLabels()
-                quiz!.attempt += 1
                 index = 0
             }
             btnArr[index].thisBtn.setTitle(btn.title(for: .normal), for: .normal)
