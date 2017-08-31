@@ -119,10 +119,16 @@ class GameViewController: UIViewController {
         let gratzLabel = UILabel(frame: labelStack.frame)
         gratzLabel.text = "Success, thats it"
         gratzLabel.textColor = UIColor.white
+        gratzLabel.adjustsFontSizeToFitWidth = true
+        gratzLabel.textAlignment = NSTextAlignment.center
+        gratzLabel.font = UIFont.systemFont(ofSize: 20)
         labelStack.addArrangedSubview(gratzLabel)
         let keyLabel = UILabel(frame: firstRowBtnStack.frame)
         keyLabel.text = quiz?.key
         keyLabel.textColor = UIColor.red
+        keyLabel.adjustsFontSizeToFitWidth = true
+        keyLabel.textAlignment = NSTextAlignment.center
+        keyLabel.font = UIFont.systemFont(ofSize: 22)
         firstRowBtnStack.addArrangedSubview(keyLabel)
         let nextBtn = UIButton(frame: lastRowBtnStack.frame)
         nextBtn.setTitle("Next", for: .normal)
