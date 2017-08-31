@@ -228,6 +228,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bankLabel" destination="F1P-bR-xM6" id="2Du-jw-JNz"/>
                         <outlet property="baseView" destination="xxh-AJ-EAa" id="YzA-R5-gZ9"/>
                         <outlet property="firstRowBtnStack" destination="CbT-o0-i3E" id="LsT-rw-Npd"/>
                         <outlet property="imgPoke" destination="uPp-8M-Bzg" id="1fe-6R-HxK"/>

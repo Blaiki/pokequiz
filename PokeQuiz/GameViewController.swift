@@ -9,8 +9,10 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
+    static var loadedId:Int = -1
+    static var bank:Int = 0
     // Outlets
+    @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet var baseView: UIView!
     @IBOutlet weak var lbQuestion: UILabel!
     @IBOutlet weak var imgPoke: UIImageView!
@@ -22,8 +24,7 @@ class GameViewController: UIViewController {
     var btnArr = [BtnTagged]()
     var quiz:QuizItem? = nil
     var firstOpen = true
-    static var loadedId:Int = -1
-    static var bank:Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class GameViewController: UIViewController {
             GameViewController.loadedId = (quiz!.id)!
             saveData()
         }
+        bankLabel.text = String(GameViewController.bank)
         var letterBox:[Character] = quiz!.generateArray()
         letterBox.shuffle()
         imgPoke.image = quiz!.imageShadow()!
@@ -83,6 +85,8 @@ class GameViewController: UIViewController {
             btnArr[index].prevBtn = btn
             if(checkCorrect()){
                 imgPoke.image = quiz!.image
+                addBank(attempts: quiz!.attempt)
+                saveData()
                 quiz!.updateCurAsViewed()
                 clearLayout()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
@@ -96,9 +100,22 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
+    private func addBank(attempts:Int){
+        switch attempts {
+        case 1:
+            GameViewController.bank += 100
+        case 2:
+            GameViewController.bank += 50
+        case 3:
+            GameViewController.bank += 30
+        default:
+            GameViewController.bank += 0
+        }
+        bankLabel.text = String(GameViewController.bank)
+    }
     private func checkCorrect()->Bool{
         var tmpStr:String = ""
+        quiz!.attempt += 1
         for index in 0 ... btnArr.count-1{
             if let _:UIButton = btnArr[index].prevBtn{
                 tmpStr += btnArr[index].thisBtn.title(for: .normal)!
