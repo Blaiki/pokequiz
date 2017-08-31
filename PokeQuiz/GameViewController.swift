@@ -101,6 +101,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    @IBAction func skiptonext(_ sender: Any) {
+        if(GameViewController.bank>=100){
+            GameViewController.bank -= 100
+            clearLayout()
+            generateLayout()
+            bankLabel.text = String(GameViewController.bank)
+        }
+    }
     private func prepareForNext(){
         imgPoke.image = quiz!.image
         addBank(attempts: quiz!.attempt)

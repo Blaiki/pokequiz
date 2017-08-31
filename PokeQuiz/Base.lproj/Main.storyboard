@@ -195,6 +195,9 @@
                                 <state key="normal" title="Skip - 100P" backgroundImage="button2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="skiptonext:" destination="9Jk-mX-UC9" eventType="touchUpInside" id="n3M-tx-wYi"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="money4" translatesAutoresizingMaskIntoConstraints="NO" id="yas-u0-nnl">
                                 <rect key="frame" x="335" y="30" width="30" height="30"/>
