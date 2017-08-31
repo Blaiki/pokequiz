@@ -38,21 +38,20 @@ class AppValues: NSObject, NSCoding{
         guard let team = aDecoder.decodeObject(forKey: AppProps.team) as? String else {
             return nil
         }
-        guard let id = aDecoder.decodeObject(forKey: AppProps.id) as? Int else {
-            return nil
-        }
-        guard let bank = aDecoder.decodeObject(forKey: AppProps.bank) as? Int else {
-            return nil
-        }
+        let id = aDecoder.decodeInteger(forKey: AppProps.id)
+        let bank = aDecoder.decodeInteger(forKey: AppProps.bank)
         self.init(team:team,id:id,bank:bank)
     }
 }
 
 class AppLoader{
     static func saveTeam(appData:AppValues?) {
+        if let tname = appData?.team {
+            ViewController.teamName = tname
+        }
         _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default",id:-1,bank:0), toFile: AppValues.ArchiveURL.path)
     }
-    static func loadData () -> AppValues? {
+     static func loadData () -> AppValues? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: AppValues.ArchiveURL.path) as? AppValues
     }
 }
