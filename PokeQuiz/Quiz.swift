@@ -15,7 +15,7 @@ class QuizItem{
     
     var key:String
     var image:UIImage
-    var attempt:Int = 0
+    var attempt:Int = 1
     var id:Int?
     
     init(key:String,image:UIImage) {

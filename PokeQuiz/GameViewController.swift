@@ -79,6 +79,7 @@ class GameViewController: UIViewController {
             var index:Int = getCurFreeLabel()
             if(index == -1){
                 clearLabels()
+                quiz!.attempt += 1
                 index = 0
             }
             btnArr[index].thisBtn.setTitle(btn.title(for: .normal), for: .normal)
@@ -115,7 +116,6 @@ class GameViewController: UIViewController {
     }
     private func checkCorrect()->Bool{
         var tmpStr:String = ""
-        quiz!.attempt += 1
         for index in 0 ... btnArr.count-1{
             if let _:UIButton = btnArr[index].prevBtn{
                 tmpStr += btnArr[index].thisBtn.title(for: .normal)!
