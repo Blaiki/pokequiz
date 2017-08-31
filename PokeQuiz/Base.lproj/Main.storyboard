@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -183,11 +184,32 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1P-bR-xM6">
+                                <rect key="frame" x="124.5" y="410" width="126.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numbers of trys: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjO-tc-WrE">
+                                <rect key="frame" x="31" y="450" width="175.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get: 100Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB6-lG-UeR">
+                                <rect key="frame" x="252" y="450" width="92" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uPp-8M-Bzg" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="100" id="47o-Fg-K87"/>
+                            <constraint firstItem="F1P-bR-xM6" firstAttribute="centerX" secondItem="xxh-AJ-EAa" secondAttribute="centerX" id="CBK-4v-qPM"/>
+                            <constraint firstItem="F1P-bR-xM6" firstAttribute="top" secondItem="uPp-8M-Bzg" secondAttribute="bottom" constant="10" id="D3f-cg-c93"/>
                             <constraint firstItem="56b-5a-jbD" firstAttribute="centerX" secondItem="xxh-AJ-EAa" secondAttribute="centerX" id="EBA-fF-HQE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wB6-lG-UeR" secondAttribute="trailing" constant="15" id="GH8-WZ-kd8"/>
                             <constraint firstItem="4GG-oS-0LT" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" constant="15" id="I1u-gc-gm2"/>
                             <constraint firstItem="Qmi-Nx-k5u" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" id="N4J-bw-Img"/>
                             <constraint firstAttribute="trailing" secondItem="4GG-oS-0LT" secondAttribute="trailing" constant="15" id="QiH-kC-UA8"/>
@@ -196,9 +218,12 @@
                             <constraint firstItem="56b-5a-jbD" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="50" id="bqj-33-UFu"/>
                             <constraint firstItem="uPp-8M-Bzg" firstAttribute="centerX" secondItem="xxh-AJ-EAa" secondAttribute="centerX" id="fYf-5c-x2M"/>
                             <constraint firstItem="kqs-7M-4EU" firstAttribute="top" secondItem="xxh-AJ-EAa" secondAttribute="top" constant="15" id="g85-1j-qWz"/>
+                            <constraint firstItem="WjO-tc-WrE" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leadingMargin" constant="15" id="khE-yS-YWh"/>
                             <constraint firstAttribute="trailing" secondItem="Qmi-Nx-k5u" secondAttribute="trailing" id="oZB-TT-rAh"/>
                             <constraint firstItem="kqs-7M-4EU" firstAttribute="leading" secondItem="xxh-AJ-EAa" secondAttribute="leading" constant="15" id="od9-1g-Ibp"/>
+                            <constraint firstItem="WjO-tc-WrE" firstAttribute="top" secondItem="uPp-8M-Bzg" secondAttribute="bottom" constant="50" id="pbp-vv-mOs"/>
                             <constraint firstAttribute="bottom" secondItem="Qmi-Nx-k5u" secondAttribute="bottom" id="u5h-hc-LeL"/>
+                            <constraint firstItem="wB6-lG-UeR" firstAttribute="top" secondItem="uPp-8M-Bzg" secondAttribute="bottom" constant="50" id="yre-Q1-4oz"/>
                         </constraints>
                     </view>
                     <connections>
