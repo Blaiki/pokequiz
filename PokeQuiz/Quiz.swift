@@ -18,6 +18,9 @@ class QuizItem{
     var attempt:Int = 1
     var id:Int?
     var gen:Int = 1
+    let dbPath = NSSearchPathForDirectoriesInDomains(
+        .documentDirectory, .userDomainMask, true
+        ).first!
     
     init(key:String,image:UIImage) {
         self.key = key
@@ -30,7 +33,13 @@ class QuizItem{
        self.image = UIImage()
        getDbRowById()
     }
-
+    
+    private func genTable()->String{
+        if(gen>0&&gen<8){
+            return "gen\(gen)"
+        }
+        return "gen1"
+    }
     
     private func strUpLenghts(str:String)->String{
         var tmpStr = str
@@ -41,15 +50,12 @@ class QuizItem{
         return tmpStr
     }
     private func getDbRowById(){
-        let path = NSSearchPathForDirectoriesInDomains(
-            .documentDirectory, .userDomainMask, true
-            ).first!
         do {
-            let db = try Connection("\(path)/pokeQuiz.sqlite")
+            let db = try Connection("\(dbPath)/pokeQuiz.sqlite")
             let id = Expression<Int64>("id")
             let name = Expression<String>("name")
             let image = Expression<SQLite.Blob>("image")
-            let data = Table("pokeData")
+            let data = Table(genTable())
             let query = data.filter(id == Int64(self.id!))
             if let item = try db.pluck(query) {
                 self.key = item[name]
@@ -67,11 +73,11 @@ class QuizItem{
                 .documentDirectory, .userDomainMask, true
                 ).first!
             do {
-                let db = try Connection("\(path)/pokeQuiz.sqlite")
+                let db = try Connection("\(dbPath)/pokeQuiz.sqlite")
                 let id = Expression<Int64>("id")
                 let name = Expression<String>("name")
                 let image = Expression<SQLite.Blob>("image")
-                let data = Table("pokeData")
+                let data = Table(genTable())
                 let query = data.filter(id == Int64(self.id!))
                 if let item = try db.pluck(query) {
                     self.key = item[name]
@@ -86,14 +92,11 @@ class QuizItem{
     
     public func updateCurAsViewed(){
         if let itemId = self.id {
-            let path = NSSearchPathForDirectoriesInDomains(
-                .documentDirectory, .userDomainMask, true
-                ).first!
             do {
-                let db = try Connection("\(path)/pokeQuiz.sqlite")
+                let db = try Connection("\(dbPath)/pokeQuiz.sqlite")
                 let id = Expression<Int64>("id")
                 let visited = Expression<Bool>("visited")
-                let data = Table("pokeData")
+                let data = Table(genTable())
                 let query = data.filter(id == Int64(itemId))
                 try db.run(query.update(visited <- true))
             }catch{
@@ -102,14 +105,11 @@ class QuizItem{
         }
     }
     public func getNextId()->Int{
-        let path = NSSearchPathForDirectoriesInDomains(
-            .documentDirectory, .userDomainMask, true
-            ).first!
         do {
-            let db = try Connection("\(path)/pokeQuiz.sqlite")
+            let db = try Connection("\(dbPath)/pokeQuiz.sqlite")
             let id = Expression<Int64>("id")
             let visited = Expression<Bool>("visited")
-            let data = Table("pokeData")
+            let data = Table(genTable())
             let query = data.select(id).filter(!visited)
             let all = Array(try db.prepare(query))
             if (all.count > 0){
