@@ -10,6 +10,7 @@
 		3D0364C01F4726C200BD02EB /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0364BF1F4726C200BD02EB /* SQLite.framework */; };
 		3D0364C11F4726C200BD02EB /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D0364BF1F4726C200BD02EB /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D5081971F4728BA00DC3E13 /* pokeQuiz.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3D5081961F4728BA00DC3E13 /* pokeQuiz.sqlite */; };
+		3D779DF01F59571900805A9F /* Stat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D779DEF1F59571900805A9F /* Stat.swift */; };
 		3DA324D91F42E63C00BF084C /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA324D81F42E63C00BF084C /* Quiz.swift */; };
 		3DA324DB1F42F67200BF084C /* AppValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA324DA1F42F67200BF084C /* AppValues.swift */; };
 		3DA324DD1F42F83000BF084C /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DA324DC1F42F83000BF084C /* TeamViewController.swift */; };
@@ -97,6 +98,7 @@
 		3D0364BD1F4726B200BD02EB /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "../../Downloads/SQLite.swift-master/build/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
 		3D0364BF1F4726C200BD02EB /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5081961F4728BA00DC3E13 /* pokeQuiz.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = pokeQuiz.sqlite; path = PokeQuiz/pokeQuiz.sqlite; sourceTree = "<group>"; };
+		3D779DEF1F59571900805A9F /* Stat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stat.swift; sourceTree = "<group>"; };
 		3DA324D81F42E63C00BF084C /* Quiz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		3DA324DA1F42F67200BF084C /* AppValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppValues.swift; sourceTree = "<group>"; };
 		3DA324DC1F42F83000BF084C /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				3DF8E1C61F4450980037C1D8 /* TeamYellowViewController.swift */,
 				3DF8E1C41F44505C0037C1D8 /* TeamRedViewController.swift */,
 				8A97CDD91F5944F6002E7EF4 /* StatisticViewController.swift */,
+				3D779DEF1F59571900805A9F /* Stat.swift */,
 			);
 			path = PokeQuiz;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				3DF8E1C51F44505C0037C1D8 /* TeamRedViewController.swift in Sources */,
 				8AD764231F41D2DF00770B29 /* AppDelegate.swift in Sources */,
 				3DA324DB1F42F67200BF084C /* AppValues.swift in Sources */,
+				3D779DF01F59571900805A9F /* Stat.swift in Sources */,
 				8A0D50151F422EAB0023E548 /* ChooseGenViewController.swift in Sources */,
 				8AD764351F41DD1C00770B29 /* ChooseViewController.swift in Sources */,
 			);
