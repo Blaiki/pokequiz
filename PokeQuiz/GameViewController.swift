@@ -62,7 +62,6 @@ class GameViewController: UIViewController {
             //labelStack.removeArrangedSubview(sub) sub.removeConstraint(constraintwidth)
             sub.removeFromSuperview()
         }
-        labelStack.removeConstraint(labelStack.constraints.last!)
         btnArr = [BtnTagged]()
         labelStack.removeConstraint(labelStack.constraints.first!)
         
