@@ -47,6 +47,7 @@ class GameViewController: UIViewController {
         genFirstRow(array: letterBox, color: .red)
         genSecondRow(array: letterBox, color: .red)
         genLabel(length: quiz!.key.characters.count,color: .red)
+        
     }
     
     private func clearLayout(){
