@@ -46,8 +46,7 @@ class GameViewController: UIViewController {
         imgPoke.image = quiz!.imageShadow()!
         genFirstRow(array: letterBox, color: .red)
         genSecondRow(array: letterBox, color: .red)
-        genLabel(length: quiz!.key.characters.count,color: .red)
-        
+        genLabel(length: quiz!.key.characters.count,color: .darkGray)
     }
     
     private func clearLayout(){
@@ -60,9 +59,10 @@ class GameViewController: UIViewController {
             sub.removeFromSuperview()
         }
         for sub in labelStack.arrangedSubviews{
-            //labelStack.removeArrangedSubview(sub)
+            //labelStack.removeArrangedSubview(sub) sub.removeConstraint(constraintwidth)
             sub.removeFromSuperview()
         }
+        labelStack.removeConstraint(labelStack.constraints.last!)
         btnArr = [BtnTagged]()
         labelStack.removeConstraint(labelStack.constraints.first!)
         
