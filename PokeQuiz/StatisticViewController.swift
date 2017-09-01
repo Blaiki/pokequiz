@@ -10,26 +10,28 @@ import UIKit
 
 class StatisticViewController: UIViewController {
 
+    @IBOutlet weak var lblBank: UILabel!
+    @IBOutlet weak var lblCorrect: UILabel!
+    @IBOutlet weak var lblWrong: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupData()
         // Do any additional setup after loading the view.
     }
-
+    
+    private func setupData(){
+        lblBank.text=String(GameViewController.bank)
+        let stat:statData = Stat.getStatistic(gen: 1)
+        if(stat.gen != 0){
+            lblCorrect.text = "Correct answers: \(stat.right)"
+            lblWrong.text = "Wrong answers: \(stat.wrong)"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

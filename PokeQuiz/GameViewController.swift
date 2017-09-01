@@ -113,8 +113,6 @@ class GameViewController: UIViewController {
     private func prepareForNext(){
         imgPoke.image = quiz!.image
         addBank(attempts: quiz!.attempt)
-        saveData()
-        quiz!.updateCurAsViewed()
         clearLayout()
         
         let gratzLabel = UILabel(frame: labelStack.frame)
@@ -139,9 +137,11 @@ class GameViewController: UIViewController {
     }
     
     private func startNext(){
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+        Stat.addRight(gen: quiz!.gen)
+        quiz!.updateCurAsViewed()
+        saveData()
         generateLayout()
-        //})
+
     }
     
     private func addBank(attempts:Int){
@@ -199,6 +199,7 @@ class GameViewController: UIViewController {
             }
         }
         quiz!.attempt += 1
+        Stat.addWrong(gen: quiz!.gen)
     }
     
     private func clearLabel(btn:UIButton){

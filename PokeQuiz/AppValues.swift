@@ -48,6 +48,7 @@ class AppLoader{
     static func saveTeam(appData:AppValues?) {
         if let tname = appData?.team {
             ViewController.teamName = tname
+            Stat.initialize(team: tname)
         }
         _ = NSKeyedArchiver.archiveRootObject(appData ?? AppValues(team:"default",id:-1,bank:0), toFile: AppValues.ArchiveURL.path)
     }

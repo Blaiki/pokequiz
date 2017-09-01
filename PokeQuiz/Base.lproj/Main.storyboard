@@ -336,6 +336,11 @@
                             <constraint firstItem="P2y-Qr-I9b" firstAttribute="top" secondItem="rJF-ZW-2gS" secondAttribute="bottom" constant="15" id="zOc-Ub-zfl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblBank" destination="bGl-iC-PCP" id="uN8-jJ-hwv"/>
+                        <outlet property="lblCorrect" destination="TOn-ZJ-pYt" id="kCb-eK-ZkA"/>
+                        <outlet property="lblWrong" destination="rJF-ZW-2gS" id="DMJ-XU-MlN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyn-R8-nQz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -668,6 +673,6 @@
         <image name="valor" width="360" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eFB-kc-397"/>
+        <segue reference="bUg-8f-OpJ"/>
     </inferredMetricsTieBreakers>
 </document>

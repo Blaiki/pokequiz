@@ -17,6 +17,7 @@ class QuizItem{
     var image:UIImage
     var attempt:Int = 1
     var id:Int?
+    var gen:Int = 1
     
     init(key:String,image:UIImage) {
         self.key = key
