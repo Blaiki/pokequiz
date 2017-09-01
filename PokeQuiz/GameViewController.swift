@@ -10,7 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     static var loadedId:Int = -1
-    static var bank:Int = 0
+    static var bank:Int = 9000
     // Outlets
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet var baseView: UIView!
@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
         imgPoke.image = quiz!.imageShadow()!
         genFirstRow(array: letterBox, color: .red)
         genSecondRow(array: letterBox, color: .red)
-        genLabel(length: quiz!.key.characters.count,color: .red)
+        genLabel(length: quiz!.key.characters.count,color: .darkGray)
     }
     
     private func clearLayout(){
@@ -59,9 +59,10 @@ class GameViewController: UIViewController {
             sub.removeFromSuperview()
         }
         for sub in labelStack.arrangedSubviews{
-            //labelStack.removeArrangedSubview(sub)
+            //labelStack.removeArrangedSubview(sub) sub.removeConstraint(constraintwidth)
             sub.removeFromSuperview()
         }
+        labelStack.removeConstraint(labelStack.constraints.last!)
         btnArr = [BtnTagged]()
         
     }
@@ -175,6 +176,9 @@ class GameViewController: UIViewController {
             btnArr.append(BtnTagged(thisBtn: btn,prevBtn:nil))
             labelStack.addArrangedSubview(btn)
         }
+        // Change label stack view width constraint due to length
+        let constraintwidth = NSLayoutConstraint(item: labelStack, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(length*50))
+        labelStack.addConstraint(constraintwidth)
     }
     
     private func getCurFreeLabel()->Int{
