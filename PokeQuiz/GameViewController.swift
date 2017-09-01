@@ -176,7 +176,7 @@ class GameViewController: UIViewController {
             btnArr.append(BtnTagged(thisBtn: btn,prevBtn:nil))
             labelStack.addArrangedSubview(btn)
         }
-        // Change label stack view width constraint due to length
+        // Change label stack view width constraint due to length 40
         let constraintwidth = NSLayoutConstraint(item: labelStack, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(length*50))
         labelStack.addConstraint(constraintwidth)
     }
