@@ -10,7 +10,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     static var loadedId:Int = -1
-    static var bank:Int = 0
+    static var bank:Int = 9000
     // Outlets
     @IBOutlet weak var bankLabel: UILabel!
     @IBOutlet var baseView: UIView!
@@ -64,6 +64,7 @@ class GameViewController: UIViewController {
             sub.removeFromSuperview()
         }
         btnArr = [BtnTagged]()
+        labelStack.removeConstraint(labelStack.constraints.first!)
         
     }
     
@@ -176,6 +177,8 @@ class GameViewController: UIViewController {
             btnArr.append(BtnTagged(thisBtn: btn,prevBtn:nil))
             labelStack.addArrangedSubview(btn)
         }
+        let constraintwidth = NSLayoutConstraint(item: labelStack, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(length*35))
+        labelStack.addConstraint(constraintwidth)
     }
     
     private func getCurFreeLabel()->Int{
